@@ -54,8 +54,7 @@ export default class Index extends Component {
           localStorage.setItem('nilai', self.state.input.nilai);
           localStorage.setItem('sandi', self.state.input.sandi);
           localStorage.setItem('token', r.data.token);
-          self.props.history.push('/');
-          alert(JSON.stringify(r))
+          self.props.history.push('/penulis');
         }else{
           alert(JSON.stringify(r))
         }
