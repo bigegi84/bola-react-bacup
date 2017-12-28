@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header"
+import {Link} from "react-router-dom";
 
 const Navigation = (props) => (
   <div id="wrapper">
@@ -38,13 +39,20 @@ const Navigation = (props) => (
           </li>
         </ul>
       </section>
-
       <section>
         <ul className="actions vertical">
-          <li><a href="#" className="button big fit">Log In</a></li>
+          <li>
+            <Link
+              to={`/tamu/masuk`}>
+              <a
+                className="button big fit
+              ">
+                Log In
+              </a>
+            </Link>
+          </li>
         </ul>
       </section>
-
     </section>
     <div id="main">
       {props.children}

@@ -7,12 +7,14 @@ import HomeLogin from './main/home/login';
 import HomeArticle from './main/home/article';
 import AuthorDashboard from './main/author/dashboard';
 import AuthorArticleCreate from './main/author/article/create';
+import Masuk from "./imperfect/component/activity/tamu/Masuk";
 
 class ImperfectRoute extends Component {
   render() {
     return (
       <HashRouter>
         <Navigation>
+          <Route path="/tamu/masuk" component={Masuk}/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/home" component={Home}/>
           <Route path="/home/login" component={HomeLogin}/>
