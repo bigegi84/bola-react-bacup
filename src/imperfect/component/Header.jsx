@@ -1,22 +1,67 @@
 import React from 'react'
 import Menu from "./single/Menu";
-
+import MenuList from "./list/MenuList";
+import {Url} from "../../config";
+import {Link} from "react-router-dom";
 class Header extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      data:[],
+      judul:{}
+    };
+    this.loadData=this.loadData.bind(this);
+    this.getJudul=this.getJudul.bind(this);
+    this.getMenu=this.getMenu.bind(this);
+  }
+  componentWillMount(){
+    this.loadData();
+  }
+  loadData(){
+    this.getMenu();
+    this.getJudul()
+  }
+  getMenu(){
+    fetch(Url+'tamu/menu',
+      {
+        method: 'GET',
+      })
+      .then((response) => response.json())
+      .then((r) => {
+        r=r.data;
+        this.setState({data:r});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  getJudul(){
+    fetch(Url+'tamu/variabel/'+'Judul%20Web',
+      {
+        method: 'GET',
+      })
+      .then((response) => response.json())
+      .then((r) => {
+        r=r.data;
+        this.setState({judul:r});
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
   render(){
     return(
       <header id="header">
-        <h1><a href="#">Gilang Pratama Wiguna</a></h1>
+        <h1>
+          <Link
+            to={`/tamu`}>
+            {this.state.judul.nilai}
+          </Link>
+          </h1>
         <nav className="links">
-          <ul>
-            <Menu
-              title="Coba"
-            />
-            <li><a href="#">Lorem</a></li>
-            <li><a href="#">Ipsum</a></li>
-            <li><a href="#">Feugiat</a></li>
-            <li><a href="#">Tempus</a></li>
-            <li><a href="#">Adipiscing</a></li>
-          </ul>
+          <MenuList
+            data={this.state.data}
+          />
         </nav>
         <nav className="main">
           <ul>

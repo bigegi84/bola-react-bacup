@@ -43,12 +43,9 @@ const Navigation = (props) => (
         <ul className="actions vertical">
           <li>
             <Link
+              className="button big fit"
               to={`/tamu/masuk`}>
-              <a
-                className="button big fit
-              ">
-                Log In
-              </a>
+              Log In
             </Link>
           </li>
         </ul>
