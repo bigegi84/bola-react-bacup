@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from '../single/Menu'
+import Menu from '../view/Menu'
 import {Url} from "../../../config";
 class Index extends React.Component{
   render(){

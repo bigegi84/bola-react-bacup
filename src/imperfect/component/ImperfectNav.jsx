@@ -3,7 +3,13 @@ import Header from "./Header"
 import {Link} from "react-router-dom";
 import {Url} from "../../config";
 import PenulisNav from "./nav/PenulisNav";
-class Navigation extends React.Component{
+import {connect} from "react-redux";
+import {getLocalStorage} from "../../redux/actions/index";
+import Button from "./view/Button";
+import LoginNav from "./nav/LoginNav";
+import SingletonDefaultExportInstance from "../../singleton/SingletonDefaultExportInstance";
+import Singleton from "../../singleton/Singleton";
+class ImperfectNav extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -15,7 +21,24 @@ class Navigation extends React.Component{
     this.loadData=this.loadData.bind(this);
     this.getDeskripsi=this.getDeskripsi.bind(this);
     this.update=this.update.bind(this);
+    this.handleClick=this.handleClick.bind(this);
   }
+  componentWillReceiveProps(nextProps){
+    if(this.props!==nextProps){
+      this.setState({
+        pengurusNav:localStorage.getItem("token")!=="",
+        masukNav:localStorage.getItem("token")==="",
+      })
+    }
+  }
+  handleClick = () => {
+    localStorage.setItem("token","");
+    this.setState({
+      pengurusNav:localStorage.getItem("token")!=="",
+      masukNav:localStorage.getItem("token")==="",
+    });
+    window.location.href = "#/tamu/masuk";
+  };
   update() {
   }
   componentDidMount(){
@@ -39,40 +62,26 @@ class Navigation extends React.Component{
       });
   }
   render(){
-    console.log(this.state);
-    let Nav={};
-    if(this.state.pengurusNav){
-      Nav=(<PenulisNav/>)
-    }
-    if(this.state.masukNav){
-      Nav=(
-        <section id="menu">
-        <section>
-          <ul className="actions vertical">
-            <li>
-              <Link
-                className="button big fit"
-                to={`/tamu/masuk`}>
-                Log In
-              </Link>
-            </li>
-          </ul>
-        </section>
-        </section>
-      )
-    }
+    Singleton.type="jask";
+    console.log(Singleton.type)
+    Singleton.hai="jasdnjasnkk";
+    console.log(Singleton.hai)
     return(
       <div id="wrapper">
         <Header/>
-        {Nav}
         <div id="main">
           {this.props.children}
         </div>
         <section id="sidebar">
           <section id="intro">
-            <a href="#" className="logo"><img src="images/logo.jpg" alt="" /></a>
             <header>
-              <h2>Hello Everyone</h2>
+              <LoginNav
+                handler={this.handleClick}
+                isLogin={localStorage.getItem("token")!==""}
+              />
+              <h2
+              onClick={this.handleClick}
+              >Hello Everyone</h2>
               <p>{this.state.deskripsi.nilai}</p>
             </header>
           </section>
@@ -191,4 +200,10 @@ class Navigation extends React.Component{
     )
   }
 }
-export default Navigation;
+const mapStateToProps=(state,ownProps)=>({
+  token: getLocalStorage("token")
+});
+// export default connect(
+//   mapStateToProps
+// )(ImperfectNav);
+export default ImperfectNav;

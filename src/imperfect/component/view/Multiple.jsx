@@ -1,13 +1,15 @@
 import React from 'react'
-import {Link} from "react-router-dom";
 class Index extends React.Component{
   render(){
     const data=this.props.data;
     return(
       <li>
-        <Link to={`/tamu/menu/${data.slug}`} replace>
-          {data.nama}
-        </Link>
+        <h5>{data.nama}</h5>
+        <a
+          onClick={() => this.props.delete(this.props.index)}
+        >
+          delete
+        </a>
       </li>
     )
   }

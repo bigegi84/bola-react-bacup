@@ -1,11 +1,10 @@
 import React from 'react'
-import Article from '../single/Article'
-
+import ArticleSmall from '../view/ArticleSmall'
 class Index extends React.Component{
   render(){
     const list=this.props.data.map((item, index) => {
       return (
-        <Article
+        <ArticleSmall
           data={item}
           key={index}
         />

@@ -4,7 +4,7 @@ const style={
     textAlign:'justify'
   }
 };
-class Index extends React.Component{
+class ArticleSmall extends React.Component{
   render(){
     const data=this.props.data;
     return(
@@ -20,6 +20,9 @@ class Index extends React.Component{
           </div>
           <div className="meta">
             <time className="published" dateTime="2015-11-01">{data.waktu}</time>
+            <a className="author">
+              <span className="name">{data.manusia.pengguna}</span>
+            </a>
           </div>
         </header>
         <p>{data.konten}</p>
@@ -27,4 +30,4 @@ class Index extends React.Component{
     )
   }
 }
-export default Index
+export default ArticleSmall

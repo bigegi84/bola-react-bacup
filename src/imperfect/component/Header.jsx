@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from "./single/Menu";
+import Menu from "./view/Menu";
 import MenuList from "./list/MenuList";
 import {Url} from "../../config";
 import {Link} from "react-router-dom";

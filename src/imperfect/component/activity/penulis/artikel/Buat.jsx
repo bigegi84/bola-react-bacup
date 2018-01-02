@@ -6,12 +6,14 @@ import TextLabel from '../../../form/TextLabel'
 import TextAreaLabel from '../../../form/TextAreaLabel'
 import Button from "../../../view/Button";
 import DropDownLabel from "../../../form/DropDownLabel";
+import MultipleLabel from "../../../form/MultipleLabel";
 export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data:[],
       menu:[],
+      tag:[],
       input:{},
       interval:{}
     };
@@ -19,6 +21,7 @@ export default class Index extends Component {
     this.kirimClick=this.kirimClick.bind(this);
     this.loadData=this.loadData.bind(this);
     this.getMenu=this.getMenu.bind(this);
+    this.tagChange=this.tagChange.bind(this);
   }
   componentWillMount(){
     this.loadData();
@@ -37,6 +40,7 @@ export default class Index extends Component {
         if(r.success){
           this.setState({
             menu:r.data,
+            tag:r.data,
             input:{
               id_menu:r.data[0].id
             }
@@ -65,6 +69,12 @@ export default class Index extends Component {
       input
     });
     console.log(this.state.input);
+  }
+  tagChange(data) {
+    console.log("tag change",this.state.tag);
+    this.setState({
+      tag:data
+    });
   }
   kirimClick(){
     const self=this;
@@ -116,6 +126,12 @@ export default class Index extends Component {
             data={this.state.menu}
             change={this.inputChange}
           />
+          {/*<MultipleLabel*/}
+            {/*title="Tag"*/}
+            {/*name="id_menu"*/}
+            {/*data={this.state.menu}*/}
+            {/*change={this.tagChange}*/}
+          {/*/>*/}
           <Button
             title="Buat Artikel"
             handler={this.kirimClick}
