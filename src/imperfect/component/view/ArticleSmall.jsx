@@ -1,5 +1,9 @@
 import React from 'react'
-
+const style={
+  p:{
+    textAlign:'justify'
+  }
+};
 class Index extends React.Component{
   render(){
     const data=this.props.data;
@@ -8,7 +12,11 @@ class Index extends React.Component{
         <header>
           <div className="title">
             <h2>{data.judul}</h2>
-            <p>{data.deskripsi}</p>
+            <p
+              style={style.p}
+            >
+              {data.deskripsi}
+            </p>
           </div>
           <div className="meta">
             <time className="published" dateTime="2015-11-01">{data.waktu}</time>
