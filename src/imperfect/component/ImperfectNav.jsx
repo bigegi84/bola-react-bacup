@@ -62,10 +62,6 @@ class ImperfectNav extends React.Component{
       });
   }
   render(){
-    Singleton.type="jask";
-    console.log(Singleton.type)
-    Singleton.hai="jasdnjasnkk";
-    console.log(Singleton.hai)
     return(
       <div id="wrapper">
         <Header/>

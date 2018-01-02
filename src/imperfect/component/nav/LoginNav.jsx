@@ -42,7 +42,7 @@ class LoginNav extends React.Component{
           <p>Pengurus</p>
           <Link
             className="button"
-            to={`/penulis/`}
+            to={`/pengurus/menu`}
             replace
           >
             Menu

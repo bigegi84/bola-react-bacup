@@ -6,7 +6,6 @@ import ArticleList from '../../../list/ArticleList'
 import TextLabel from '../../../form/TextLabel'
 import Button from "../../../view/Button";
 import MenuJson from "../../../../json/MenuJson";
-// import MenuArticleResponse from "../../../../json/response/MenuArticleResponse";
 import ArtikelJson from "../../../../json/ArticleJson";
 import {filterDinamis, setDinamis} from "../../../../../redux/actions/index";
 class Index extends Component {
