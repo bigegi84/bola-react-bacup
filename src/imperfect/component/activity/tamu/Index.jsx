@@ -4,6 +4,7 @@ import {Url} from '../../../../config'
 import ArticleList from '../../list/ArticleList'
 import TextLabel from '../../form/TextLabel'
 import Button from "../../view/Button";
+import stateBola from "../../../../index";
 export default class Index extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,8 @@ export default class Index extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.kirimClick=this.kirimClick.bind(this);
     this.loadData=this.loadData.bind(this);
+    // stateBola.name='rubah'
+    // const a=""
   }
   componentWillMount(){
     this.loadData();

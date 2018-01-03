@@ -1,4 +1,5 @@
 import React from "react";
+import {Observer} from "mobx-react/custom.module";
 import Header from "./Header"
 import {Link} from "react-router-dom";
 import {Url} from "../../config";
@@ -9,6 +10,9 @@ import Button from "./view/Button";
 import LoginNav from "./nav/LoginNav";
 import SingletonDefaultExportInstance from "../../singleton/SingletonDefaultExportInstance";
 import Singleton from "../../singleton/Singleton";
+import mobxStore from "../../mobx/mobxStore";
+import ApiHelper from "../../json/ApiHelper";
+import Index from "./list/ArticleList";
 class ImperfectNav extends React.Component{
   constructor(props){
     super(props);
@@ -20,7 +24,6 @@ class ImperfectNav extends React.Component{
     };
     this.loadData=this.loadData.bind(this);
     this.getDeskripsi=this.getDeskripsi.bind(this);
-    this.getJudul=this.getJudul.bind(this);
     this.update=this.update.bind(this);
     this.handleClick=this.handleClick.bind(this);
   }
@@ -46,21 +49,8 @@ class ImperfectNav extends React.Component{
     this.loadData()
   }
   loadData(){
-    this.getDeskripsi()
-  }
-  getJudul(){
-    fetch(Url+'tamu/variabel/'+'Judul%20Web',
-      {
-        method: 'GET',
-      })
-      .then((response) => response.json())
-      .then((r) => {
-        r=r.data;
-        this.setState({judul:r});
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    this.getDeskripsi();
+    ApiHelper.getJudul()
   }
   getDeskripsi(){
     fetch(Url+'tamu/variabel/'+'Deskripsi%20Web',
@@ -77,7 +67,6 @@ class ImperfectNav extends React.Component{
       });
   }
   render(){
-    console.log(this.state.judul)
     return(
       <div id="wrapper">
         <Header/>
@@ -91,10 +80,10 @@ class ImperfectNav extends React.Component{
                 handler={this.handleClick}
                 isLogin={localStorage.getItem("token")!==""}
               />
-              <h2
-              >
-                {this.state.judul.nilai}
-              </h2>
+              {/*<Observer>*/}
+                {/*{()=><h2>{this.props.store.judul.nilai}</h2>}*/}
+              {/*</Observer>*/}
+              {/*<h2>{this.state.judul.nilai}</h2>*/}
               <p>{this.state.deskripsi.nilai}</p>
             </header>
           </section>
@@ -108,16 +97,18 @@ class ImperfectNav extends React.Component{
             </ul>
             <p className="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
           </section>
-
         </section>
       </div>
     )
   }
 }
-const mapStateToProps=(state,ownProps)=>({
-  token: getLocalStorage("token")
-});
-// export default connect(
-//   mapStateToProps
-// )(ImperfectNav);
+// const View=observer(Index);
+const withMobx=()=>{
+  return(
+    <ImperfectNav
+      store={mobxStore}
+    />
+  )
+};
+// export default withMobx
 export default ImperfectNav;

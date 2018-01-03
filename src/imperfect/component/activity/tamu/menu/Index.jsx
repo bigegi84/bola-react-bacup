@@ -8,6 +8,9 @@ import Button from "../../../view/Button";
 import MenuJson from "../../../../../json/MenuJson";
 import ArtikelJson from "../../../../../json/ArticleJson";
 import {filterDinamis, setDinamis} from "../../../../../redux/actions/index";
+import ApiHelper from "../../../../../json/ApiHelper";
+import {observer} from "mobx-react";
+import mobxStore from "../../../../../mobx/mobxStore";
 class Index extends Component {
   constructor(props) {
     super(props);
@@ -30,46 +33,25 @@ class Index extends Component {
   //   return this.state !== nextState;
   // }
   loadData(slug){
-    let r;
-    axios(
-      {
-        url: Url+'tamu/menu/'+slug+'/artikel',
-        method: 'GET',
-      })
-      .then((response)=>{
-        r=response.data;
-        if(r.success){
-          // this.props.dispatch(setDinamis("coba",r.data.artikel))
-          this.setState({data:r.data.artikel});
-          // this.forceUpdate()
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch((error)=>{
-        console.log(error);
-      });
+    ApiHelper.getTamuMenuArtikel(slug)
   }
   render() {
-    let a=(<div/>);
-    if(this.props.data!==undefined){
-      a=(<ArticleList data={this.props.data}/>)
-    }
     return (
       <div>
-        <ArticleList data={this.state.data}/>
+        <ArticleList data={this.props.store.tamuMenuArtikel}/>
       </div>
     )
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  let props={
-    data:{}
-  };
-  props.data=filterDinamis("coba",state.Dinamis)
-  return props
-};
-// export default connect(
-//   mapStateToProps
-// )(Index);
-export default Index;
+const View=observer(Index);
+class withMobx extends Component{
+  render(){
+    return(
+      <View
+        match={this.props.match}
+        store={mobxStore}
+      />
+    )
+  }
+}
+export default withMobx

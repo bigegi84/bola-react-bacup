@@ -3,6 +3,8 @@ import Menu from "./view/Menu";
 import MenuList from "./list/MenuList";
 import {Url} from "../../config";
 import {Link} from "react-router-dom";
+import {observer} from "mobx-react";
+import mobxStore from "../../mobx/mobxStore";
 class Header extends React.Component{
   constructor(props) {
     super(props);
@@ -80,5 +82,13 @@ class Header extends React.Component{
     )
   }
 }
-
+const View=observer(Header);
+const withMobx=()=>{
+  return(
+    <View
+      store={mobxStore}
+    />
+  )
+};
+// export default withMobx
 export default Header

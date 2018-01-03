@@ -1,11 +1,14 @@
 import React,{Component} from "react"
 import axios from 'axios'
 import {create} from 'apisauce'
+import {Observer,observer} from 'mobx-react'
 import {Url} from '../../../../config'
 import ArticleList from '../../list/ArticleList'
 import TextLabel from '../../form/TextLabel'
 import Button from "../../view/Button";
-export default class Index extends Component {
+import mobxStore from "../../../../mobx/mobxStore";
+import ApiHelper from "../../../../json/ApiHelper";
+class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,31 +20,12 @@ export default class Index extends Component {
     this.komenChange = this.komenChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.kirimClick=this.kirimClick.bind(this);
-    this.loadData=this.loadData.bind(this);
   }
   componentWillMount(){
     this.loadData();
   }
   loadData(){
-    axios(
-      {
-        url: Url+'penulis/artikel',
-        method: 'GET',
-        params: {
-          token: localStorage.getItem('token')
-        },
-      })
-      .then((response)=>{
-        let r=response.data;
-        if(r.success){
-          this.setState({data:r.data});
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch((error)=>{
-        console.log(error);
-      });
+    ApiHelper.getPenulisArtikel()
   }
   komenChange(event) {
     const target = event.target;
@@ -103,14 +87,25 @@ export default class Index extends Component {
     return (
       <div>
         <article className="post">
-          <p>Arikel yang telah di buat: {this.state.data.length}</p>
+          <p>Arikel yang telah di buat: {this.props.store.penulisArtikel.length}</p>
           <Button
             title="Buat Artikel"
             handler={this.klikBuatArtikel}
           />
         </article>
-        <ArticleList data={this.state.data}/>
+        <ArticleList data={this.props.store.penulisArtikel}/>
       </div>
     )
   }
-};
+}
+const View=observer(Index);
+class withMobx extends Component{
+  render(){
+    return(
+      <View
+        store={mobxStore}
+      />
+    )
+  }
+}
+export default withMobx

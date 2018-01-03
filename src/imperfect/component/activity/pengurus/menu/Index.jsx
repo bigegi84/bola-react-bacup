@@ -3,44 +3,19 @@ import axios from 'axios'
 import {Url} from '../../../../../config'
 import TableList from "../../../list/TableList";
 import {Link} from "react-router-dom";
-export default class Index extends Component {
+import ApiHelper from "../../../../../json/ApiHelper";
+import {observer} from "mobx-react";
+import mobxStore from "../../../../../mobx/mobxStore";
+class Index extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data:[],
-      menu:[],
-      tag:[],
-      input:{},
-      interval:{}
-    };
-    this.loadData=this.loadData.bind(this);
     this.klikHapus=this.klikHapus.bind(this);
   }
   componentWillMount(){
     this.loadData();
   }
   loadData(){
-    this.getMenu()
-  }
-  getMenu(){
-    axios(
-      {
-        url: Url+'tamu/menu',
-        method: 'GET'
-      })
-      .then((response)=>{
-        let r=response.data;
-        if(r.success){
-          this.setState({
-            menu:r.data,
-          });
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch((error)=>{
-        console.log(error);
-      });
+    ApiHelper.getMenu();
   }
   klikHapus(id){
     axios(
@@ -75,10 +50,19 @@ export default class Index extends Component {
           <TableList
             pk={'id'}
             klikHapus={this.klikHapus}
-            data={this.state.menu}
+            data={this.props.store.menu}
           />
         </article>
       </article>
     )
   }
 };
+const View=observer(Index);
+const withMobx=()=>{
+    return(
+      <View
+        store={mobxStore}
+      />
+    )
+};
+export default withMobx
