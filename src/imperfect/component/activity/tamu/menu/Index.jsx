@@ -5,8 +5,8 @@ import {Url} from '../../../../../config'
 import ArticleList from '../../../list/ArticleList'
 import TextLabel from '../../../form/TextLabel'
 import Button from "../../../view/Button";
-import MenuJson from "../../../../json/MenuJson";
-import ArtikelJson from "../../../../json/ArticleJson";
+import MenuJson from "../../../../../json/MenuJson";
+import ArtikelJson from "../../../../../json/ArticleJson";
 import {filterDinamis, setDinamis} from "../../../../../redux/actions/index";
 class Index extends Component {
   constructor(props) {

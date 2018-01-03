@@ -4,13 +4,26 @@ class Index extends React.Component{
   render(){
     const data=this.props.data;
     let view=[];
+    let i=0;
     for(let name in data) {
       const value = data[name];
-      view.push(<td>{value}</td>)
+      view.push(
+        <td key={i}>
+          {value}
+        </td>
+      );
+      i++
     }
     return(
       <tr>
         {view}
+        <td>
+          <button
+            onClick={()=>this.props.klikHapus(data.id)}
+          >
+            Delete
+          </button>
+        </td>
       </tr>
     )
   }

@@ -2,6 +2,7 @@ import React,{Component} from "react"
 import axios from 'axios'
 import {Url} from '../../../../../config'
 import TableList from "../../../list/TableList";
+import {Link} from "react-router-dom";
 export default class Index extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +14,7 @@ export default class Index extends Component {
       interval:{}
     };
     this.loadData=this.loadData.bind(this);
+    this.klikHapus=this.klikHapus.bind(this);
   }
   componentWillMount(){
     this.loadData();
@@ -40,13 +42,40 @@ export default class Index extends Component {
         console.log(error);
       });
   }
+  klikHapus(id){
+    axios(
+      {
+        url: Url+'pengurus/menu/'+id,
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json',
+          'token':localStorage.getItem('token'),
+        },
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.success){
+          this.loadData();
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
   render() {
     return (
       <article className="post">
         <p>Menu.</p>
-        <button>buat Menu</button>
+        <Link
+          className='button'
+          to={'/pengurus/menu/buat'}
+        >Buat Menu</Link>
         <article className="post">
           <TableList
+            pk={'id'}
+            klikHapus={this.klikHapus}
             data={this.state.menu}
           />
         </article>

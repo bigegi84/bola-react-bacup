@@ -6,21 +6,32 @@ class Index extends React.Component{
     const list=this.props.data.map((item, index) => {
       return (
         <Table
+          klikHapus={this.props.klikHapus}
           data={item}
           key={index}
         />
       )
     });
     let header=[];
+    let i=0;
     for(let name in this.props.data[0]) {
-      header.push(<th>{name}</th>)
+      header.push(
+        <th key={i}>
+          {name}
+        </th>
+      );
+      i++
     }
     return (
       <table>
-        <tr>
-          {header}
-        </tr>
-        {list}
+        <thead>
+          <tr>
+            {header}
+          </tr>
+        </thead>
+        <tbody>
+          {list}
+        </tbody>
       </table>
     )
   }

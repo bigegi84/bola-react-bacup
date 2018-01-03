@@ -72,7 +72,7 @@ class Header extends React.Component{
               </form>
             </li>
             <li className="menu">
-              <a className="fa-bars" href="#menu">Menu</a>
+              <a className="fa-bars">Menu</a>
             </li>
           </ul>
         </nav>
