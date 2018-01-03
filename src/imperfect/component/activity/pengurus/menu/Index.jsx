@@ -45,14 +45,11 @@ export default class Index extends Component {
   klikHapus(id){
     axios(
       {
-        url: Url+'pengurus/menu/'+id,
-        method: 'DELETE',
+        url: Url+'pengurus/menu/'+id+'/delete',
+        method: 'GET',
         params:{
           'token':localStorage.getItem('token'),
-        },
-        headers: {
-          'Accept': 'application/json',
-        },
+        }
       })
       .then((response)=>{
         let r=response.data;
