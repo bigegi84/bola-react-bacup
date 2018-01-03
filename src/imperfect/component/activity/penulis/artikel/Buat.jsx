@@ -81,9 +81,11 @@ export default class Index extends Component {
     axios({
       url: Url+'penulis/artikel',
       method: 'POST',
+      params:{
+        token:localStorage.getItem('token')
+      },
       headers: {
         'Accept': 'application/json',
-        'token':localStorage.getItem('token'),
       },
       data: JSON.stringify(self.state.input)
     })

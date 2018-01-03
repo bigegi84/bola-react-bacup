@@ -47,9 +47,11 @@ export default class Index extends Component {
       {
         url: Url+'pengurus/menu/'+id,
         method: 'DELETE',
+        params:{
+          'token':localStorage.getItem('token'),
+        },
         headers: {
           'Accept': 'application/json',
-          'token':localStorage.getItem('token'),
         },
       })
       .then((response)=>{

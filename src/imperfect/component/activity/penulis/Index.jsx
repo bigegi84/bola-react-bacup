@@ -1,5 +1,6 @@
 import React,{Component} from "react"
 import axios from 'axios'
+import {create} from 'apisauce'
 import {Url} from '../../../../config'
 import ArticleList from '../../list/ArticleList'
 import TextLabel from '../../form/TextLabel'
@@ -22,24 +23,23 @@ export default class Index extends Component {
     this.loadData();
   }
   loadData(){
-    const self=this;
     axios(
       {
         url: Url+'penulis/artikel',
         method: 'GET',
-        headers: {
-          'token':localStorage.getItem('token'),
+        params: {
+          token: localStorage.getItem('token')
         },
       })
-      .then(function (response) {
+      .then((response)=>{
         let r=response.data;
         if(r.success){
-          self.setState({data:r.data});
+          this.setState({data:r.data});
         }else{
           alert(JSON.stringify(r))
         }
       })
-      .catch(function (error) {
+      .catch((error)=>{
         console.log(error);
       });
   }

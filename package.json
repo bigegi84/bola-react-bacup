@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apisauce": "^0.14.3",
     "axios": "^0.16.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -13,6 +14,7 @@
     "jquery": "^3.2.1",
     "materialize-css": "^0.97.8",
     "now-ui-kit": "^1.0.1",
+    "prop-types": "latest",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.5",
     "react-bootstrap-typeahead": "^2.0.2",
@@ -26,8 +28,7 @@
     "rxjs": "^5.5.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
-    "whatwg-fetch": "^2.0.3",
-    "prop-types": "latest"
+    "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

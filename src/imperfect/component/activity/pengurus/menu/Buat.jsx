@@ -37,9 +37,11 @@ export default class Index extends Component {
     axios({
       url: Url+'pengurus/menu',
       method: 'POST',
+      params:{
+        'token':localStorage.getItem('token'),
+      },
       headers: {
         'Accept': 'application/json',
-        'token':localStorage.getItem('token'),
       },
       data: JSON.stringify(this.state.input)
     })
