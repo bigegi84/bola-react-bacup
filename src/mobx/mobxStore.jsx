@@ -33,8 +33,17 @@ class mobxStore {
 export default observable(
   {
     menu:[],
+    pengurusManusia:[],
+    pengurusVariabel:[],
+    pengurusVariabelBuat:{
+      nama:'',
+      nilai:''
+    },
     penulisArtikel:[],
     tamuMenuArtikel:[],
-    judul:{}
+    judul:{
+      nilai:""
+    },
+    history:{}
   }
 )

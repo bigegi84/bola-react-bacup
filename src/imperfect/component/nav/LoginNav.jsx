@@ -47,6 +47,22 @@ class LoginNav extends React.Component{
           >
             Menu
           </Link>
+          <br/>
+          <Link
+            className="button"
+            to={`/pengurus/variabel`}
+            replace
+          >
+            Variabel
+          </Link>
+          <br/>
+          <Link
+            className="button"
+            to={`/pengurus/manusia`}
+            replace
+          >
+            Manusia
+          </Link>
         </MiniPost>
       );
     }

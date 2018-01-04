@@ -19,7 +19,7 @@ class Index extends React.Component{
         {view}
         <td>
           <button
-            onClick={()=>this.props.klikHapus(data.id)}
+            onClick={()=>this.props.klikHapus(data[this.props.pk])}
           >
             Delete
           </button>

@@ -1,11 +1,11 @@
 import React from 'react'
-import ArticleSmall from '../view/ArticleSmall'
 import Table from "../view/Table";
 class Index extends React.Component{
   render(){
     const list=this.props.data.map((item, index) => {
       return (
         <Table
+          pk={this.props.pk}
           klikHapus={this.props.klikHapus}
           data={item}
           key={index}

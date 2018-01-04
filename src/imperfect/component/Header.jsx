@@ -5,6 +5,8 @@ import {Url} from "../../config";
 import {Link} from "react-router-dom";
 import {observer} from "mobx-react";
 import mobxStore from "../../mobx/mobxStore";
+import {Observer} from "mobx-react/custom.module";
+import ApiHelper from "../../json/ApiHelper";
 class Header extends React.Component{
   constructor(props) {
     super(props);
@@ -13,57 +15,38 @@ class Header extends React.Component{
       judul:{}
     };
     this.loadData=this.loadData.bind(this);
-    this.getJudul=this.getJudul.bind(this);
-    this.getMenu=this.getMenu.bind(this);
   }
   componentWillMount(){
     this.loadData();
   }
   loadData(){
-    this.getMenu();
-    this.getJudul()
-  }
-  getMenu(){
-    fetch(Url+'tamu/menu',
-      {
-        method: 'GET',
-      })
-      .then((response) => response.json())
-      .then((r) => {
-        r=r.data;
-        this.setState({data:r});
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-  getJudul(){
-    fetch(Url+'tamu/variabel/'+'Judul%20Web',
-      {
-        method: 'GET',
-      })
-      .then((response) => response.json())
-      .then((r) => {
-        r=r.data;
-        this.setState({judul:r});
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    ApiHelper.tamuMenu();
   }
   render(){
     return(
       <header id="header">
         <h1>
-          <Link
-            to={`/tamu`}>
-            {this.state.judul.nilai}
-          </Link>
-          </h1>
+          <Observer>
+            {()=>{
+              return (
+                <Link
+                  to={`/tamu`}>
+                  {mobxStore.judul.nilai}
+                </Link>
+              )
+            }}
+          </Observer>
+        </h1>
         <nav className="links">
-          <MenuList
-            data={this.state.data}
-          />
+          <Observer>
+            {()=>{
+              return (
+                <MenuList
+                  data={mobxStore.menu}
+                />
+              )
+            }}
+          </Observer>
         </nav>
         <nav className="main">
           <ul>
@@ -82,13 +65,4 @@ class Header extends React.Component{
     )
   }
 }
-const View=observer(Header);
-const withMobx=()=>{
-  return(
-    <View
-      store={mobxStore}
-    />
-  )
-};
-// export default withMobx
 export default Header

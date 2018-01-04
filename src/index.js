@@ -10,6 +10,7 @@ import ImperfectRoute from "./imperfect/component/ImperfectRoute";
 import Store from "./mobx/Store";
 import Singleton from "./singleton/Singleton"
 import mobxStore from './mobx/mobxStore'
+import ApiHelper from "./json/ApiHelper";
 const store = createStore(reducer)
 // render(
 //   <Provider store={store}>
@@ -17,10 +18,8 @@ const store = createStore(reducer)
 //   </Provider>,
 //   document.getElementById('root')
 // );
+ApiHelper.getJudul();
 render(
   <ImperfectRoute />,
   document.getElementById('root')
 );
-mobxStore.data="coba";
-const a=mobxStore.data;
-const b=""

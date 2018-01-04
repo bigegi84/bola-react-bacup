@@ -9,7 +9,7 @@ class Index extends Component {
     this.loadData();
   }
   loadData(){
-    ApiHelper.pengurusManusia();
+    ApiHelper.pengurusVariabel();
   }
   render() {
     return (
@@ -28,7 +28,7 @@ class Index extends Component {
                   klikHapus={(pk)=>{
                     ApiHelper.pengurusVariabelHapus(pk)
                   }}
-                  data={mobxStore.pengurusManusia}
+                  data={mobxStore.pengurusVariabel}
                 />
               )
             }}

@@ -24,7 +24,6 @@ class ImperfectNav extends React.Component{
     };
     this.loadData=this.loadData.bind(this);
     this.getDeskripsi=this.getDeskripsi.bind(this);
-    this.update=this.update.bind(this);
     this.handleClick=this.handleClick.bind(this);
   }
   componentWillReceiveProps(nextProps){
@@ -43,14 +42,12 @@ class ImperfectNav extends React.Component{
     });
     window.location.href = "#/tamu/masuk";
   };
-  update() {
-  }
   componentDidMount(){
+    mobxStore.history=this.props.history;
     this.loadData()
   }
   loadData(){
     this.getDeskripsi();
-    ApiHelper.getJudul()
   }
   getDeskripsi(){
     fetch(Url+'tamu/variabel/'+'Deskripsi%20Web',
@@ -80,10 +77,10 @@ class ImperfectNav extends React.Component{
                 handler={this.handleClick}
                 isLogin={localStorage.getItem("token")!==""}
               />
-              {/*<Observer>*/}
-                {/*{()=><h2>{this.props.store.judul.nilai}</h2>}*/}
-              {/*</Observer>*/}
-              {/*<h2>{this.state.judul.nilai}</h2>*/}
+              <Observer>
+                {()=><h2>{mobxStore.judul.nilai}</h2>}
+              </Observer>
+              <h2>{this.state.judul.nilai}</h2>
               <p>{this.state.deskripsi.nilai}</p>
             </header>
           </section>
@@ -102,13 +99,4 @@ class ImperfectNav extends React.Component{
     )
   }
 }
-// const View=observer(Index);
-const withMobx=()=>{
-  return(
-    <ImperfectNav
-      store={mobxStore}
-    />
-  )
-};
-// export default withMobx
 export default ImperfectNav;

@@ -9,9 +9,12 @@ import TamuMenuIndex from "./activity/tamu/menu/Index";
 // penulis
 import PenulisIndex from "./activity/penulis/Index";
 import PenulisArtikelBuat from "./activity/penulis/artikel/Buat";
-// penulis
+// pengurus
 import PengurusMenu from "./activity/pengurus/menu/Index";
 import PengurusMenuBuat from "./activity/pengurus/menu/Buat";
+import PengurusVariabel from "./activity/pengurus/variabel/Index";
+import PengurusVariabelBuat from "./activity/pengurus/variabel/Buat";
+import PengurusManusia from "./activity/pengurus/manusia/Index";
 class ImperfectRoute extends Component {
   render() {
     return (
@@ -28,6 +31,9 @@ class ImperfectRoute extends Component {
           {/*pengurus*/}
           <Route exact path="/pengurus/menu" component={PengurusMenu}/>
           <Route exact path="/pengurus/menu/buat" component={PengurusMenuBuat}/>
+          <Route exact path="/pengurus/variabel" component={PengurusVariabel}/>
+          <Route exact path="/pengurus/variabel/buat" component={PengurusVariabelBuat}/>
+          <Route exact path="/pengurus/manusia" component={PengurusManusia}/>
         </ImperfectNav>
       </HashRouter>
     );

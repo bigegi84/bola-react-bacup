@@ -4,7 +4,7 @@ import {Url} from '../../../../../config'
 import TableList from "../../../list/TableList";
 import {Link} from "react-router-dom";
 import ApiHelper from "../../../../../json/ApiHelper";
-import {observer} from "mobx-react";
+import {observer, Observer} from "mobx-react";
 import mobxStore from "../../../../../mobx/mobxStore";
 class Index extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Index extends Component {
     this.loadData();
   }
   loadData(){
-    ApiHelper.getMenu();
+    ApiHelper.tamuMenu();
   }
   klikHapus(id){
     axios(
@@ -47,22 +47,22 @@ class Index extends Component {
           to={'/pengurus/menu/buat'}
         >Buat Menu</Link>
         <article className="post">
-          <TableList
-            pk={'id'}
-            klikHapus={this.klikHapus}
-            data={this.props.store.menu}
-          />
+          <Observer>
+            {()=>{
+              return(
+                <TableList
+                  pk={'id'}
+                  klikHapus={(id)=>{
+                    ApiHelper.pengurusMenuHapus(id)
+                  }}
+                  data={mobxStore.menu}
+                />
+              )
+            }}
+          </Observer>
         </article>
       </article>
     )
   }
-};
-const View=observer(Index);
-const withMobx=()=>{
-    return(
-      <View
-        store={mobxStore}
-      />
-    )
-};
-export default withMobx
+}
+export default Index
