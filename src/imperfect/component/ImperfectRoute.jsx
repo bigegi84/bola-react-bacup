@@ -5,10 +5,13 @@ import ImperfectNav from './ImperfectNav';
 import Home from './activity/Home';
 import TamuMasuk from "./activity/tamu/Masuk";
 import TamuIndex from "./activity/tamu/Index";
+import TamuArtikel from "./activity/tamu/artikel/Index";
 import TamuMenuIndex from "./activity/tamu/menu/Index";
 // penulis
 import PenulisIndex from "./activity/penulis/Index";
+import PenulisArtikel from "./activity/penulis/artikel/Index";
 import PenulisArtikelBuat from "./activity/penulis/artikel/Buat";
+import PenulisArtikelSayaUbah from "./activity/penulis/artikel/Ubah";
 // pengurus
 import PengurusMenu from "./activity/pengurus/menu/Index";
 import PengurusMenuBuat from "./activity/pengurus/menu/Buat";
@@ -24,11 +27,14 @@ class ImperfectRoute extends Component {
           <Route exact path="/" component={TamuIndex}/>
           {/*tamu*/}
           <Route exact path="/tamu" component={TamuIndex}/>
+          <Route exact path="/tamu/artikel/:slug" component={TamuArtikel}/>
           <Route exact path="/tamu/masuk" component={TamuMasuk}/>
           <Route path="/tamu/menu/:slug/" component={TamuMenuIndex}/>
           {/*penulis*/}
           <Route exact path="/penulis" component={PenulisIndex}/>
+          <Route exact path="/penulis/artikel" component={PenulisArtikel}/>
           <Route exact path="/penulis/artikel/buat" component={PenulisArtikelBuat}/>
+          <Route exact path="/penulis/artikel/saya/ubah/:slug" component={PenulisArtikelSayaUbah}/>
           {/*pengurus*/}
           <Route exact path="/pengurus/menu" component={PengurusMenu}/>
           <Route exact path="/pengurus/menu/buat" component={PengurusMenuBuat}/>

@@ -1,19 +1,22 @@
 import React from 'react'
-
-class Index extends React.Component{
+const css={
+  text:{
+    resize:'vertical'
+  }
+};
+export default class TextAreaLabel extends React.Component{
   render(){
     return(
       <div>
         <h5>{this.props.title}</h5>
         <textarea
+          style={css.text}
           name={this.props.name}
           onChange={(e)=>this.props.change(e)}
-        >
-          {this.props.value}
-        </textarea>
+          value={this.props.value}
+        />
         <br/>
       </div>
     )
   }
 }
-export default Index

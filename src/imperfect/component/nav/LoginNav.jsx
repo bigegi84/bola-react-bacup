@@ -34,9 +34,16 @@ class LoginNav extends React.Component{
             to={`/penulis/`}
             replace
           >
-            Penulis
+            Dashboard
           </Link>
           <br/>
+          <Link
+            className="button"
+            to={`/penulis/artikel`}
+            replace
+          >
+            Artikel
+          </Link>
           <br/>
           <br/>
           <p>Pengurus</p>

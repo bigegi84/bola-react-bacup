@@ -48,6 +48,7 @@ class ImperfectNav extends React.Component{
   }
   loadData(){
     this.getDeskripsi();
+    ApiHelper.getCopyright()
   }
   getDeskripsi(){
     fetch(Url+'tamu/variabel/'+'Deskripsi%20Web',
@@ -92,7 +93,9 @@ class ImperfectNav extends React.Component{
               <li><a className="fa-rss"><span className="label">RSS</span></a></li>
               <li><a className="fa-envelope"><span className="label">Email</span></a></li>
             </ul>
-            <p className="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+            <Observer>
+              {()=><p className="copyright">{mobxStore.copyright.nilai}</p>}
+            </Observer>
           </section>
         </section>
       </div>

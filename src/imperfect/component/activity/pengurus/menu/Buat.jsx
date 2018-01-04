@@ -31,7 +31,6 @@ export default class Index extends Component {
     this.setState({
       input
     });
-    console.log(this.state.input);
   }
   klikKirim(){
     axios({

@@ -36,7 +36,15 @@ export default observable(
       nilai:'',
       sandi:''
     },
+    tamuArtikelSatu:{
+      manusia:{
+        pengguna:''
+      }
+    },
     tamuMenuArtikel:[],
+    tamuMenuArtikelPaginasi:{
+      data:[]
+    },
     menu:[],
     pengurusManusia:[],
     pengurusManusiaBuat:{
@@ -51,7 +59,17 @@ export default observable(
       nilai:''
     },
     penulisArtikel:[],
+    penulisArtikelSayaSatu:{},
+    penulisArtikelSayaUbah:{
+      judul:'',
+      konten:'',
+      deskripsi:'',
+      id_menu:0
+    },
     judul:{
+      nilai:""
+    },
+    copyright:{
       nilai:""
     },
     history:{}

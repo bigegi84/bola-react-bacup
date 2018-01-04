@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 const style={
   p:{
     textAlign:'justify'
@@ -6,12 +7,47 @@ const style={
 };
 class ArticleSmall extends React.Component{
   render(){
+    const pk=this.props.pk;
+    const klikUbah=this.props.klikUbah;
+    const klikHapus=this.props.klikHapus;
     const data=this.props.data;
+    const action=this.props.action;
+    let actionView=(<div/>);
+    if(action){
+      actionView=(
+        <div>
+          <button
+            onClick={()=>{
+              klikUbah(data['slug'])
+            }}
+          >
+            Ubah
+          </button>
+          <button
+            onClick={()=>{
+              klikHapus(data[pk])
+            }}
+          >
+            Hapus
+          </button>
+        </div>
+      )
+    }
+    let konten=data.konten;
+    if(data.konten.length>300){
+      konten=data.konten.substring(0,300)+' . . . .'
+    }
     return(
       <article className="post">
         <header>
           <div className="title">
-            <h2>{data.judul}</h2>
+            <h2>
+              <Link
+                to={'/tamu/artikel/'+data.slug}
+              >
+                {data.judul}
+              </Link>
+            </h2>
             <p
               style={style.p}
             >
@@ -25,7 +61,8 @@ class ArticleSmall extends React.Component{
             </a>
           </div>
         </header>
-        <p>{data.konten}</p>
+        <p>{konten}</p>
+        {actionView}
       </article>
     )
   }

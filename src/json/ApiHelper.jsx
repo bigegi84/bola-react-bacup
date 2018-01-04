@@ -1,6 +1,7 @@
 import axios from "axios";
 import {Url} from "../config";
 import mobxStore from "../mobx/mobxStore";
+import hashHistory from "../imperfect/component/AppHistory";
 function withToken() {
   return {
     params: {
@@ -9,23 +10,22 @@ function withToken() {
   }
 }
 class ApiHelper{
-  static tamuMasuk(){
+  static tamuMasuk(callback){
     axios({
       url: Url+'tamu/masuk',
       method: 'POST',
       headers: {
         'Accept': 'application/json',
       },
-      // data: JSON.stringify(self.state.input)
+      data: JSON.stringify(mobxStore.tamuMasuk)
     })
       .then((response)=>{
         let r=response.data;
-        console.log(r);
         if(r.success){
-          // localStorage.setItem('nilai', self.state.input.nilai);
-          // localStorage.setItem('sandi', self.state.input.sandi);
+          localStorage.setItem('nilai', mobxStore.tamuMasuk.nilai);
+          localStorage.setItem('sandi', mobxStore.tamuMasuk.sandi);
           localStorage.setItem('token', r.data.token);
-          window.href='#/penulis'
+          callback()
         }else{
           alert(JSON.stringify(r))
         }
@@ -34,7 +34,29 @@ class ApiHelper{
         console.log(error);
       });
   }
-  static getPenulisArtikel(){
+  static tamuArtikelSatu(kolom,nilai){
+    axios({
+      url: Url+'tamu/artikel/satu',
+      method: 'GET',
+      params:{
+        kolom:kolom,
+        nilai:nilai
+      }
+    })
+      .then((response)=>{
+        let r=response.data;
+        if(r.success){
+          mobxStore.tamuArtikelSatu=r.data
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  // penulis
+  static penulisArtikel(){
     axios(
       {
         url: Url+'penulis/artikel',
@@ -47,6 +69,75 @@ class ApiHelper{
         let r=response.data;
         if(r.success){
           mobxStore.penulisArtikel=r.data;
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static penulisArtikelSayaSatu(kolom,nilai,callback){
+    axios(
+      {
+        url: Url+'penulis/artikel/satu',
+        method: 'GET',
+        params: {
+          kolom:kolom,
+          nilai:nilai,
+          token:localStorage.getItem('token')
+        },
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.success){
+          mobxStore.penulisArtikelSayaSatu=r.data;
+          callback()
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static penulisArtikelUbah(kolom,nilai,callback){
+    axios(
+      {
+        url: Url+'penulis/artikel/satu/ubah',
+        method: 'POST',
+        params: {
+          kolom:kolom,
+          nilai:nilai,
+          token:localStorage.getItem('token')
+        },
+        data: JSON.stringify(mobxStore.penulisArtikelSayaUbah)
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.success){
+          callback()
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static penulisArtikelHapus(nilai){
+    axios(
+      {
+        url: Url+'penulis/artikel/hapus/'+nilai,
+        method: 'GET',
+        params: {
+          token: localStorage.getItem('token')
+        },
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.success){
+          this.penulisArtikel()
         }else{
           alert(JSON.stringify(r))
         }
@@ -219,6 +310,24 @@ class ApiHelper{
         console.log(error);
       });
   }
+  static getTamuMenuArtikelPaginasi(slug){
+    axios(
+      {
+        url: Url+'tamu/menu/artikel/paginasi',
+        method: 'GET',
+        params:{
+          slug:slug,
+          halaman:10
+        }
+      })
+      .then((response)=>{
+        const r=response.data;
+        mobxStore.tamuMenuArtikelPaginasi=r;
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
   static getJudul(){
     axios(
       {
@@ -228,6 +337,20 @@ class ApiHelper{
       .then((response) => {
         const r=response.data;
         mobxStore.judul=r.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  static getCopyright(){
+    axios(
+      {
+        url:Url+'tamu/variabel/'+'Copyright',
+        method: 'GET',
+      })
+      .then((response) => {
+        const r=response.data;
+        mobxStore.copyright=r.data;
       })
       .catch((error) => {
         console.error(error);

@@ -3,75 +3,49 @@ import axios from 'axios'
 import {Url} from '../../../../config'
 import TextLabel from '../../form/TextLabel'
 import Button from "../../view/Button";
+import mobxStore from "../../../../mobx/mobxStore";
+import ApiHelper from "../../../../json/ApiHelper";
+import hashHistory from "../../AppHistory";
+import {Observer} from "mobx-react/custom.module";
 export default class Masuk extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data:[],
-      input:{
-        nilai:localStorage.getItem("nilai"),
-        sandi:localStorage.getItem("sandi"),
-      },
-      interval:{}
-    };
-    this.inputChange = this.inputChange.bind(this);
-    this.kirimClick=this.kirimClick.bind(this);
-  }
-  inputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    console.log(this.state.input);
-    let komen=this.state.input;
-    komen[name]=value;
-    this.setState({
-      komen
-    });
-  }
-  kirimClick(){
-    const self=this;
-    axios({
-      url: Url+'tamu/masuk',
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-      },
-      data: JSON.stringify(self.state.input)
-    })
-      .then(function (response) {
-        let r=response.data;
-        console.log(r);
-        if(r.success){
-          localStorage.setItem('nilai', self.state.input.nilai);
-          localStorage.setItem('sandi', self.state.input.sandi);
-          localStorage.setItem('token', r.data.token);
-          self.props.history.push('/penulis');
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  componentWillMount(){
+    mobxStore.tamuMasuk.nilai=localStorage.getItem("nilai");
+    mobxStore.tamuMasuk.sandi=localStorage.getItem("sandi")
   }
   render() {
     return (
       <article className="post">
-        <TextLabel
-          value={this.state.input.nilai}
-          title="Email"
-          name="nilai"
-          change={this.inputChange}
-        />
-        <TextLabel
-          value={this.state.input.sandi}
-          title="Sandi"
-          name="sandi"
-          change={this.inputChange}
-        />
+        <Observer>
+          {()=>{
+            return(
+              <div>
+                <TextLabel
+                  value={mobxStore.tamuMasuk.nilai}
+                  title="Email"
+                  name="nilai"
+                  change={(e)=>{
+                    mobxStore.tamuMasuk.nilai=e.target.value
+                  }}
+                />
+                <TextLabel
+                  value={mobxStore.tamuMasuk.sandi}
+                  title="Sandi"
+                  name="sandi"
+                  change={(e)=>{
+                    mobxStore.tamuMasuk.sandi=e.target.value
+                  }}
+                />
+              </div>
+            )
+          }}
+        </Observer>
         <Button
           title="Log In"
-          handler={this.kirimClick}/>
+          handler={()=>{
+            ApiHelper.tamuMasuk(()=>{
+              hashHistory.push('/penulis');
+            })
+          }}/>
       </article>
     )
   }

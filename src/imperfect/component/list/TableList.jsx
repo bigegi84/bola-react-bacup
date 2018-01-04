@@ -23,7 +23,9 @@ class Index extends React.Component{
       i++
     }
     return (
-      <table>
+      <table
+        className="alt"
+      >
         <thead>
           <tr>
             {header}
