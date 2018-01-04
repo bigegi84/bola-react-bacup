@@ -11,21 +11,35 @@ export default class VariabelForm extends Component {
             title="Nama"
             name="nama"
             change={(e)=>{
-              mobxStore.pengurusVariabelBuat.nama=e.target.value
+              mobxStore.pengurusManusiaBuat.nama=e.target.value
             }}
           />
           <TextLabel
-            title="Nilai"
-            name="nilai"
+            title="Email"
+            name="email"
             change={(e)=>{
-              mobxStore.pengurusVariabelBuat.nilai=e.target.value;
+              mobxStore.pengurusManusiaBuat.email=e.target.value;
+            }}
+          />
+          <TextLabel
+            title="Pengguna"
+            name="email"
+            change={(e)=>{
+              mobxStore.pengurusManusiaBuat.pengguna=e.target.value;
+            }}
+          />
+          <TextLabel
+            title="Sandi"
+            name="email"
+            change={(e)=>{
+              mobxStore.pengurusManusiaBuat.sandi=e.target.value;
             }}
           />
           <Button
             title="Buat"
             handler={(e)=>{
-              ApiHelper.pengurusBuatVariabel();
-              window.location.href = "#/pengurus/variabel";
+              ApiHelper.pengurusManusiaBuat();
+              window.location.href = "#/pengurus/manusia";
             }}
           />
         </article>

@@ -1,11 +1,11 @@
 import React,{Component} from "react"
-import VariabelForm from "./VariabelForm";
+import ManusiaForm from "./ManusiaForm";
 export default class Buat extends Component {
   render() {
     return (
       <article className="post">
-        <p>Buat Menu.</p>
-        <VariabelForm/>
+        <p>Buat Manusia.</p>
+        <ManusiaForm/>
       </article>
     )
   }

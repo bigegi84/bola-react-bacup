@@ -9,6 +9,31 @@ function withToken() {
   }
 }
 class ApiHelper{
+  static tamuMasuk(){
+    axios({
+      url: Url+'tamu/masuk',
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+      },
+      // data: JSON.stringify(self.state.input)
+    })
+      .then((response)=>{
+        let r=response.data;
+        console.log(r);
+        if(r.success){
+          // localStorage.setItem('nilai', self.state.input.nilai);
+          // localStorage.setItem('sandi', self.state.input.sandi);
+          localStorage.setItem('token', r.data.token);
+          window.href='#/penulis'
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
   static getPenulisArtikel(){
     axios(
       {
@@ -104,6 +129,27 @@ class ApiHelper{
         let r=response.data;
         if(r.success){
           mobxStore.pengurusManusia=r.data
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static pengurusManusiaBuat(){
+    axios(
+      {
+        url: Url+'pengurus/manusia',
+        method: 'POST',
+        params: {
+          token: localStorage.getItem('token')
+        },
+        data: JSON.stringify(mobxStore.pengurusManusiaBuat)
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.success){
         }else{
           alert(JSON.stringify(r))
         }

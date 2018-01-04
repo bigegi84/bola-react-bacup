@@ -1,11 +1,9 @@
 import React,{Component} from "react"
 import axios from 'axios'
 import {Url} from '../../../../config'
-// import ArticleList from '../list/ArticleList'
 import TextLabel from '../../form/TextLabel'
 import Button from "../../view/Button";
-
-export default class Index extends Component {
+export default class Masuk extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,13 +16,6 @@ export default class Index extends Component {
     };
     this.inputChange = this.inputChange.bind(this);
     this.kirimClick=this.kirimClick.bind(this);
-    this.loadData=this.loadData.bind(this);
-  }
-  componentWillMount(){
-  }
-  componentWillUnmount() {
-  }
-  loadData(){
   }
   inputChange(event) {
     const target = event.target;
@@ -65,25 +56,23 @@ export default class Index extends Component {
   }
   render() {
     return (
-      <div>
-        <article className="post">
-          <TextLabel
-            value={this.state.input.nilai}
-            title="Email"
-            name="nilai"
-            change={this.inputChange}
-          />
-          <TextLabel
-            value={this.state.input.sandi}
-            title="Sandi"
-            name="sandi"
-            change={this.inputChange}
-          />
-          <Button
-            title="Log In"
-            handler={this.kirimClick}/>
-        </article>
-      </div>
+      <article className="post">
+        <TextLabel
+          value={this.state.input.nilai}
+          title="Email"
+          name="nilai"
+          change={this.inputChange}
+        />
+        <TextLabel
+          value={this.state.input.sandi}
+          title="Sandi"
+          name="sandi"
+          change={this.inputChange}
+        />
+        <Button
+          title="Log In"
+          handler={this.kirimClick}/>
+      </article>
     )
   }
 };

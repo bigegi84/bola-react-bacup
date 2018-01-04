@@ -14,11 +14,11 @@ class Index extends Component {
   render() {
     return (
       <article className="post">
-        <p>Variabel.</p>
+        <p>Manusia.</p>
         <Link
           className='button'
-          to={'/pengurus/variabel/buat'}
-        >Buat Variabel</Link>
+          to={'/pengurus/manusia/buat'}
+        >Buat Manusia</Link>
         <article className="post">
           <Observer>
             {()=>{

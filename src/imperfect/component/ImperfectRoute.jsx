@@ -15,6 +15,7 @@ import PengurusMenuBuat from "./activity/pengurus/menu/Buat";
 import PengurusVariabel from "./activity/pengurus/variabel/Index";
 import PengurusVariabelBuat from "./activity/pengurus/variabel/Buat";
 import PengurusManusia from "./activity/pengurus/manusia/Index";
+import PengurusManusiaBuat from "./activity/pengurus/manusia/Buat";
 class ImperfectRoute extends Component {
   render() {
     return (
@@ -34,6 +35,7 @@ class ImperfectRoute extends Component {
           <Route exact path="/pengurus/variabel" component={PengurusVariabel}/>
           <Route exact path="/pengurus/variabel/buat" component={PengurusVariabelBuat}/>
           <Route exact path="/pengurus/manusia" component={PengurusManusia}/>
+          <Route exact path="/pengurus/manusia/buat" component={PengurusManusiaBuat}/>
         </ImperfectNav>
       </HashRouter>
     );
