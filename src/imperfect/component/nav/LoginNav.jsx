@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import PenulisNav from "./PenulisNav";
 import Button from "../view/Button";
+import DaftarVertikal from "../list/DaftarVertikal";
+import Panel from "../view/Panel";
 function MiniPost(props) {
   return (
     <section>
@@ -22,54 +24,81 @@ class LoginNav extends React.Component{
     if (this.props.isLogin) {
       return (
         <MiniPost>
-          <p>Navigasi</p>
-          <Button
-            title="Keluar"
-            handler={this.props.handler}
-          />
-          <br/>
-          <p>Penulis</p>
-          <Link
-            className="button"
-            to={`/penulis/`}
-            replace
-          >
-            Dashboard
-          </Link>
-          <br/>
-          <Link
-            className="button"
-            to={`/penulis/artikel`}
-            replace
-          >
-            Artikel
-          </Link>
-          <br/>
-          <br/>
-          <p>Pengurus</p>
-          <Link
-            className="button"
-            to={`/pengurus/menu`}
-            replace
-          >
-            Menu
-          </Link>
-          <br/>
-          <Link
-            className="button"
-            to={`/pengurus/variabel`}
-            replace
-          >
-            Variabel
-          </Link>
-          <br/>
-          <Link
-            className="button"
-            to={`/pengurus/manusia`}
-            replace
-          >
-            Manusia
-          </Link>
+          <Panel>
+            <p>Pengaturan</p>
+            <DaftarVertikal>
+              <li>
+                <Link
+                  className="button"
+                  to={`/penulis/profil`}
+                  replace
+                >
+                  Profil
+                </Link>
+              </li>
+              <li>
+                <Button
+                  title="Keluar"
+                  handler={this.props.handler}
+                />
+              </li>
+            </DaftarVertikal>
+          </Panel>
+          <Panel>
+            <p>Penulis</p>
+            <DaftarVertikal>
+              <li>
+                <Link
+                  className="button"
+                  to={`/penulis/`}
+                  replace
+                >
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="button"
+                  to={`/penulis/artikel`}
+                  replace
+                >
+                  Artikel
+                </Link>
+              </li>
+            </DaftarVertikal>
+          </Panel>
+          <Panel>
+            <p>Pengurus</p>
+            <DaftarVertikal>
+              <li>
+                <Link
+                  className="button"
+                  to={`/pengurus/menu`}
+                  replace
+                >
+                  Menu
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="button"
+                  to={`/pengurus/variabel`}
+                  replace
+                >
+                  Variabel
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="button"
+                  to={`/pengurus/manusia`}
+                  replace
+                >
+                  Manusia
+                </Link>
+              </li>
+            </DaftarVertikal>
+          </Panel>
         </MiniPost>
       );
     }

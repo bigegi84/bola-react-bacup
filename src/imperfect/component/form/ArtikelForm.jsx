@@ -16,18 +16,21 @@ export default class ArtikelForm extends React.Component{
           value={judulNilai}
           title="Judul"
           name="judul"
+          panjang="300"
           change={change}
         />
         <TextAreaLabel
           value={kontenNilai}
           title="Konten"
           name="konten"
+          panjang=""
           change={change}
         />
         <TextAreaLabel
           value={deskripsiNilai}
           title="Deskripsi"
           name="deskripsi"
+          panjang="300"
           change={change}
         />
         <DropDownLabel

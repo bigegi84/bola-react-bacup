@@ -9,6 +9,7 @@ import TamuArtikel from "./activity/tamu/artikel/Index";
 import TamuMenuIndex from "./activity/tamu/menu/Index";
 // penulis
 import PenulisIndex from "./activity/penulis/Index";
+import PenulisManusiaSaya from "./activity/Profil";
 import PenulisArtikel from "./activity/penulis/artikel/Index";
 import PenulisArtikelBuat from "./activity/penulis/artikel/Buat";
 import PenulisArtikelSayaUbah from "./activity/penulis/artikel/Ubah";
@@ -25,11 +26,12 @@ class ImperfectRoute extends Component {
       <HashRouter>
         <ImperfectNav>
           <Route exact path="/" component={TamuIndex}/>
+          <Route exact path="/penulis/profil" component={PenulisManusiaSaya}/>
           {/*tamu*/}
           <Route exact path="/tamu" component={TamuIndex}/>
           <Route exact path="/tamu/artikel/:slug" component={TamuArtikel}/>
           <Route exact path="/tamu/masuk" component={TamuMasuk}/>
-          <Route path="/tamu/menu/:slug/" component={TamuMenuIndex}/>
+          <Route exact path="/tamu/menu/:slug/" component={TamuMenuIndex}/>
           {/*penulis*/}
           <Route exact path="/penulis" component={PenulisIndex}/>
           <Route exact path="/penulis/artikel" component={PenulisArtikel}/>

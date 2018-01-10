@@ -5,13 +5,28 @@ const style={
     textAlign:'justify'
   }
 };
-class ArticleSmall extends React.Component{
+export default class ArtikelKecil extends React.Component{
+  constructor(props) {
+    super(props);
+  }
   render(){
     const pk=this.props.pk;
     const klikUbah=this.props.klikUbah;
     const klikHapus=this.props.klikHapus;
     const data=this.props.data;
     const action=this.props.action;
+    let gambar=(<div/>);
+    console.log(typeof data.gambar.url);
+    if(data.gambar.url!==undefined) {
+      gambar=(
+        <a className="image featured">
+          <img
+            src={data.gambar.url}
+            alt=""
+          />
+        </a>
+      )
+    }
     let actionView=(<div/>);
     if(action){
       actionView=(
@@ -34,7 +49,7 @@ class ArticleSmall extends React.Component{
       )
     }
     let konten=data.konten;
-    if(data.konten.length>300){
+    if(konten.length>300){
       konten=data.konten.substring(0,300)+' . . . .'
     }
     return(
@@ -58,13 +73,29 @@ class ArticleSmall extends React.Component{
             <time className="published" dateTime="2015-11-01">{data.waktu}</time>
             <a className="author">
               <span className="name">{data.manusia.pengguna}</span>
+              {data.manusia.gambar.url ? (
+                <img
+                  src={data.manusia.gambar.url}
+                />
+              ):(
+                <div/>
+              )}
             </a>
           </div>
         </header>
-        <p>{konten}</p>
+        {gambar}
+        <p>
+          {konten}
+        </p>
         {actionView}
       </article>
     )
   }
 }
-export default ArticleSmall
+ArtikelKecil.defaultProps={
+  data:{
+    gambar:{
+      url:''
+    }
+  }
+};

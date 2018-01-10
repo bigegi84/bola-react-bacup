@@ -32,13 +32,20 @@ class mobxStore {
 // const observableTodoStore = new mobxStore();
 export default observable(
   {
+    croppie:'',
     tamuMasuk:{
       nilai:'',
       sandi:''
     },
     tamuArtikelSatu:{
       manusia:{
-        pengguna:''
+        pengguna:'',
+        gambar:{
+
+        }
+      },
+      menu:{
+
       }
     },
     tamuMenuArtikel:[],
@@ -58,7 +65,24 @@ export default observable(
       nama:'',
       nilai:''
     },
+    //penulis
+    penulisManusiaSaya: {
+      gambar: {}
+    },
+    penulisManusiaSayaUbah: {
+      nama:'',
+      email:'',
+      pengguna:'',
+      gambar:''
+    },
     penulisArtikel:[],
+    penulisArtikelBuat:{
+      judul:'',
+      konten:'',
+      deskripsi:'',
+      id_menu:'',
+      gambar:''
+    },
     penulisArtikelSayaSatu:{},
     penulisArtikelSayaUbah:{
       judul:'',

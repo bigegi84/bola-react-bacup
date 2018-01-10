@@ -56,6 +56,51 @@ class ApiHelper{
       });
   }
   // penulis
+  static penulisManusiaSaya(callback){
+    axios(
+      {
+        url: Url+'penulis/manusia/saya',
+        method: 'GET',
+        params: {
+          token: localStorage.getItem('token')
+        },
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.sukses){
+          mobxStore.penulisManusiaSaya=r.data;
+          callback()
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static penulisManusiaSayaUbah(callback){
+    axios(
+      {
+        url: Url+'penulis/manusia/saya',
+        method: 'POST',
+        params: {
+          token: localStorage.getItem('token')
+        },
+        data:JSON.stringify(mobxStore.penulisManusiaSayaUbah)
+      })
+      .then((response)=>{
+        let r=response.data;
+        if(r.sukses){
+          this.penulisManusiaSaya()
+          callback(r.pesan)
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
   static penulisArtikel(){
     axios(
       {
@@ -74,6 +119,36 @@ class ApiHelper{
         }
       })
       .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static penulisArtikelBuat(callback){
+    axios({
+      url: Url+'penulis/artikel',
+      method: 'POST',
+      params:{
+        token:localStorage.getItem('token')
+      },
+      headers: {
+        'Accept': 'application/json',
+      },
+      data: JSON.stringify(mobxStore.penulisArtikelBuat)
+    })
+      .then((response)=>{
+        let r=response.data;
+        console.log(r);
+        if(r.success){
+          mobxStore.penulisArtikelBuat.judul='';
+          mobxStore.penulisArtikelBuat.konten='';
+          mobxStore.penulisArtikelBuat.deskripsi='';
+          mobxStore.penulisArtikelBuat.id_menu=0;
+          mobxStore.penulisArtikelBuat.gambar='';
+          callback();
+        }else{
+          alert(JSON.stringify(r))
+        }
+      })
+      .catch(function (error) {
         console.log(error);
       });
   }

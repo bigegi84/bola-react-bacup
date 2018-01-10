@@ -82,13 +82,15 @@ class Index extends Component {
     return (
       <div>
         <article className="post">
-          <p>Arikel yang telah di buat: {this.props.store.penulisArtikel.length}</p>
-          <Button
-            title="Buat Artikel"
-            handler={()=>{
-              window.location.href='#/penulis/artikel/buat'
-            }}
-          />
+          <section>
+            <h3>Arikel yang telah di buat: {this.props.store.penulisArtikel.length}</h3>
+            <Button
+              title="Buat Artikel"
+              handler={()=>{
+                window.location.href='#/penulis/artikel/buat'
+              }}
+            />
+          </section>
         </article>
         <ArticleList
           pk={'id'}

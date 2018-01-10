@@ -40,7 +40,6 @@ export default class Index extends Component {
     });
   }
   kirimClick(){
-    ApiHelper
     const self=this;
     axios({
       url: Url+'penulis/artikel',

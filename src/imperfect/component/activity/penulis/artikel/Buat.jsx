@@ -1,4 +1,5 @@
 import React,{Component} from "react"
+// import {Croppie} from 'croppie';
 import axios from 'axios'
 import {Url} from '../../../../../config'
 import ArticleList from '../../../list/ArticleList'
@@ -7,68 +8,27 @@ import TextAreaLabel from '../../../form/TextAreaLabel'
 import Button from "../../../view/Button";
 import DropDownLabel from "../../../form/DropDownLabel";
 import MultipleLabel from "../../../form/MultipleLabel";
+import FileBase64 from "react-file-base64";
+import mobxStore from "../../../../../mobx/mobxStore";
+import {Observer} from "mobx-react/custom.module";
+import GambarKecil from "../../../view/GambarKecil";
+import Kosong from "../../../view/Kosong";
+import ApiHelper from "../../../../../json/ApiHelper";
+import 'croppie/croppie.css'
+// import Croppie from "react-croppie";
+const alertify=require('alertify.js');
+const Croppie=require('croppie');
 export default class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data:[],
-      menu:[],
-      tag:[],
-      input:{},
-      interval:{}
-    };
-    this.inputChange=this.inputChange.bind(this);
-    this.kirimClick=this.kirimClick.bind(this);
-    this.loadData=this.loadData.bind(this);
-    this.getMenu=this.getMenu.bind(this);
-    this.tagChange=this.tagChange.bind(this);
+  constructor(props){
+    super(props)
+    this.state={
+      croppie:{}
+    }
+    this.croppie=this.croppie.bind(this)
+
   }
   componentWillMount(){
-    this.loadData();
-  }
-  loadData(){
-    this.getMenu()
-  }
-  getMenu(){
-    axios(
-      {
-        url: Url+'tamu/menu',
-        method: 'GET'
-      })
-      .then((response)=>{
-        let r=response.data;
-        if(r.success){
-          this.setState({
-            menu:r.data,
-            tag:r.data,
-            input:{
-              id_menu:r.data[0].id
-            }
-          });
-          console.log(this.state.input)
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch((error)=>{
-        console.log(error);
-      });
-  }
-  inputChange(event) {
-    const target = event.target;
-    let value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    switch (name) {
-      case "id_menu":
-        value=parseInt(value);
-        break;
-    }
-    let input=this.state.input;
-    input[name]=value;
-    this.setState({
-      input
-    });
-    console.log(this.state.input);
+    // this.getMenu();
   }
   tagChange(data) {
     console.log("tag change",this.state.tag);
@@ -76,31 +36,43 @@ export default class Index extends Component {
       tag:data
     });
   }
-  kirimClick(){
-    const self=this;
-    axios({
-      url: Url+'penulis/artikel',
-      method: 'POST',
-      params:{
-        token:localStorage.getItem('token')
+  croppie(file){
+    const el =this.refs.croppie;
+    const vanilla=new Croppie(el, {
+      viewport: {
+        width:600,
+        height:257.14
       },
-      headers: {
-        'Accept': 'application/json',
+      boundary: {
+        width:'auto',
+        height:600
       },
-      data: JSON.stringify(self.state.input)
-    })
-      .then(function (response) {
-        let r=response.data;
-        console.log(r);
-        if(r.success){
-          self.props.history.push('/penulis');
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    });
+    vanilla.customClass='6u$';
+    vanilla.bind({
+      url:file,
+      orientation: 4
+    });
+    this.setState({croppie:vanilla})
+  }
+  validasi(callback){
+    if(mobxStore.penulisArtikelBuat.judul===''){
+      alertify.error('Judul harus di isi.');
+      return;
+    }
+    if(mobxStore.penulisArtikelBuat.konten===''){
+      alertify.error('Konten harus di isi.');
+      return;
+    }
+    if(mobxStore.penulisArtikelBuat.deskripsi===''){
+      alertify.error('Deskripsi harus di isi.');
+      return;
+    }
+    if(mobxStore.penulisArtikelBuat.gambar===''){
+      alertify.error('Gambar harus di isi.');
+      return;
+    }
+    callback()
   }
   render() {
     return (
@@ -110,23 +82,49 @@ export default class Index extends Component {
           <TextLabel
             title="Judul"
             name="judul"
-            change={this.inputChange}
+            change={(e)=>{
+              mobxStore.penulisArtikelBuat.judul=e.target.value
+            }}
           />
           <TextAreaLabel
             title="Konten"
             name="konten"
-            change={this.inputChange}
+            change={(e)=>{
+              mobxStore.penulisArtikelBuat.konten=e.target.value
+            }}
           />
           <TextAreaLabel
             title="Deskripsi"
             name="deskripsi"
-            change={this.inputChange}
+            change={(e)=>{
+              mobxStore.penulisArtikelBuat.deskripsi=e.target.value
+            }}
           />
-          <DropDownLabel
-            title="Menu"
-            name="id_menu"
-            data={this.state.menu}
-            change={this.inputChange}
+          <Observer>
+            {()=>{
+              if(mobxStore.menu.length!==0){
+                mobxStore.penulisArtikelBuat.id_menu=mobxStore.menu[0].id;
+              }
+              return(
+                <DropDownLabel
+                  title="Menu"
+                  name="id_menu"
+                  data={mobxStore.menu}
+                  change={(e)=>{
+                    mobxStore.penulisArtikelBuat.id_menu=parseInt(e.target.value)
+                  }}
+                />
+              )
+            }}
+          </Observer>
+          <FileBase64
+            multiple={false}
+            onDone={(file)=>{
+              this.croppie(file.base64)
+            }}
+          />
+          <div
+            ref='croppie'
           />
           {/*<MultipleLabel*/}
             {/*title="Tag"*/}
@@ -134,9 +132,38 @@ export default class Index extends Component {
             {/*data={this.state.menu}*/}
             {/*change={this.tagChange}*/}
           {/*/>*/}
+          <button
+            onClick={()=>{
+              this.state.croppie.result('base64').then((base64)=>{
+                mobxStore.penulisArtikelBuat.gambar=base64
+              });
+            }}
+          >
+            Result
+          </button>
+          <Observer>
+            {()=>{
+              if(mobxStore.penulisArtikelBuat.gambar===''){
+                return(<Kosong/>)
+              }else{
+                return(
+                  <GambarKecil
+                    src={mobxStore.penulisArtikelBuat.gambar}
+                  />
+                )
+              }
+            }}
+          </Observer>
           <Button
             title="Buat Artikel"
-            handler={this.kirimClick}
+            handler={()=>{
+              this.validasi(()=>{
+                ApiHelper.penulisArtikelBuat(()=>{
+                  alertify.success('Buat Berhasil');
+                  this.props.history.push('/penulis');
+                })
+              });
+            }}
           />
         </article>
       </div>
