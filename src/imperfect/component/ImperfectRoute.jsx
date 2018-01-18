@@ -28,10 +28,10 @@ class ImperfectRoute extends Component {
           <Route exact path="/" component={TamuIndex}/>
           <Route exact path="/penulis/profil" component={PenulisManusiaSaya}/>
           {/*tamu*/}
-          <Route exact path="/tamu" component={TamuIndex}/>
+          <Route exact path="/tamu/:hal" component={TamuIndex}/>
           <Route exact path="/tamu/artikel/:slug" component={TamuArtikel}/>
           <Route exact path="/tamu/masuk" component={TamuMasuk}/>
-          <Route exact path="/tamu/menu/:slug/" component={TamuMenuIndex}/>
+          <Route exact path="/tamu/menu/:slug/:page" component={TamuMenuIndex}/>
           {/*penulis*/}
           <Route exact path="/penulis" component={PenulisIndex}/>
           <Route exact path="/penulis/artikel" component={PenulisArtikel}/>

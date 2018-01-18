@@ -5,105 +5,31 @@ import ArticleList from '../../list/ArticleList'
 import TextLabel from '../../form/TextLabel'
 import Button from "../../view/Button";
 import stateBola from "../../../../index";
+import ApiHelper from "../../../../json/ApiHelper";
+import {Observer} from "mobx-react/custom.module";
+import mobxStore from "../../../../mobx/mobxStore";
 export default class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data:[],
-      komen:{},
-      interval:{}
-    };
-    this.komenChange = this.komenChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.kirimClick=this.kirimClick.bind(this);
-    this.loadData=this.loadData.bind(this);
-    // stateBola.name='rubah'
-    // const a=""
-  }
   componentWillMount(){
-    this.loadData();
-    const interval = setInterval(this.loadData,30000);
-    this.setState({interval: interval});
+    ApiHelper.getTamuArtikelSemuaPaginasi(this.props.match.params.hal);
   }
-  componentWillUnmount() {
-    clearInterval(this.state.interval);
-  }
-  loadData(){
-    const self=this;
-    axios(
-      {
-        url: Url+'tamu/artikel',
-        method: 'GET',
-      })
-      .then(function (response) {
-        let r=response.data;
-        if(r.success){
-          self.setState({data:r.data});
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-  komenChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    console.log(name);
-    console.log(this.state.komen);
-    let komen = this.state.komen;
-    komen[name]=value;
-    this.setState({
-      komen
-    });
-  }
-  handleSubmit(){
-    fetch(Url+'login', {
-      method: 'POST',
-      body: JSON.stringify({
-        value: this.state.value,
-        password: this.state.password
-      })
-    }).then((response) => response.json())
-      .then((r) => {
-        this.props.history.push('/author/dashboard');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-  kirimClick(e){
-    const self=this;
-    e.preventDefault();
-    console.log('ini komen');
-    console.log(this.state.komen);
-    axios({
-      url: Url+'tamu/komen',
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-        },
-        data: JSON.stringify(self.state.komen)
-      })
-      .then(function (response) {
-        let r=response.data;
-        console.log(r);
-        if(r.success){
-          self.loadData();
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  // componentWillMount(){
+  //   this.loadData();
+  //   const interval = setInterval(this.loadData,30000);
+  //   this.setState({interval: interval});
+  // }
+  // componentWillUnmount() {
+  //   clearInterval(this.state.interval);
+  // }
   render() {
     return (
       <div>
-        <ArticleList data={this.state.data}/>
+        <Observer>
+          {()=>{
+            return(
+              <ArticleList data={mobxStore.tamuArtikelPaginasi.data}/>
+            )
+          }}
+        </Observer>
       </div>
     )
   }

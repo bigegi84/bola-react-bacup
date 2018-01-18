@@ -15,6 +15,7 @@ import GambarKecil from "../../../view/GambarKecil";
 import Kosong from "../../../view/Kosong";
 import ApiHelper from "../../../../../json/ApiHelper";
 import 'croppie/croppie.css'
+import CroppieView from "../../../view/CroppieView";
 // import Croppie from "react-croppie";
 const alertify=require('alertify.js');
 const Croppie=require('croppie');
@@ -120,38 +121,26 @@ export default class Index extends Component {
           <FileBase64
             multiple={false}
             onDone={(file)=>{
-              this.croppie(file.base64)
+              mobxStore.croppie=file.base64;
             }}
           />
-          <div
-            ref='croppie'
-          />
-          {/*<MultipleLabel*/}
-            {/*title="Tag"*/}
-            {/*name="id_menu"*/}
-            {/*data={this.state.menu}*/}
-            {/*change={this.tagChange}*/}
-          {/*/>*/}
-          <button
-            onClick={()=>{
-              this.state.croppie.result('base64').then((base64)=>{
-                mobxStore.penulisArtikelBuat.gambar=base64
-              });
-            }}
-          >
-            Result
-          </button>
           <Observer>
             {()=>{
-              if(mobxStore.penulisArtikelBuat.gambar===''){
-                return(<Kosong/>)
-              }else{
+              if(mobxStore.croppie===''){
                 return(
-                  <GambarKecil
-                    src={mobxStore.penulisArtikelBuat.gambar}
-                  />
+                  <div/>
                 )
               }
+              return(
+                <CroppieView
+                  width={600}
+                  height={257.14}
+                  base64={mobxStore.croppie}
+                  handler={(base64)=>{
+                    mobxStore.penulisArtikelBuat.gambar=base64
+                  }}
+                />
+              )
             }}
           </Observer>
           <Button

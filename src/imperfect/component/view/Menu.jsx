@@ -5,7 +5,7 @@ class Index extends React.Component{
     const data=this.props.data;
     return(
       <li>
-        <Link to={`/tamu/menu/${data.slug}`} replace>
+        <Link to={`/tamu/menu/${data.slug}/1`} replace>
           {data.nama}
         </Link>
       </li>

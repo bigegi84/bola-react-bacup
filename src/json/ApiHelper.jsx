@@ -34,6 +34,24 @@ class ApiHelper{
         console.log(error);
       });
   }
+  static getTamuArtikelSemuaPaginasi(page,per_hal=10){
+    axios(
+      {
+        url: Url+'tamu/artikel/paginasi',
+        method: 'GET',
+        params:{
+          page:page,
+          per_hal:per_hal
+        }
+      })
+      .then((response)=>{
+        const r=response.data;
+        mobxStore.tamuArtikelPaginasi=r;
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
   static tamuArtikelSatu(kolom,nilai){
     axios({
       url: Url+'tamu/artikel/satu',
@@ -385,14 +403,15 @@ class ApiHelper{
         console.log(error);
       });
   }
-  static getTamuMenuArtikelPaginasi(slug){
+  static getTamuMenuArtikelPaginasi(slug,page){
     axios(
       {
         url: Url+'tamu/menu/artikel/paginasi',
         method: 'GET',
         params:{
+          page:page,
           slug:slug,
-          halaman:10
+          per_hal:10
         }
       })
       .then((response)=>{

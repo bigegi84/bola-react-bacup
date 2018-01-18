@@ -13,6 +13,16 @@ import Singleton from "../../singleton/Singleton";
 import mobxStore from "../../mobx/mobxStore";
 import ApiHelper from "../../json/ApiHelper";
 import Index from "./list/ArticleList";
+const style={
+  wrapper:{
+    paddingLeft:'10em',
+    paddingRight:'10em',
+  },
+  sidebar:{
+    // width:'20em',
+    // minWidth:'20em',
+  }
+}
 class ImperfectNav extends React.Component{
   constructor(props){
     super(props);
@@ -66,23 +76,28 @@ class ImperfectNav extends React.Component{
   }
   render(){
     return(
-      <div id="wrapper">
+      <div
+        style={style.wrapper}
+        id="wrapper"
+      >
         <Header/>
         <div id="main">
           {this.props.children}
         </div>
-        <section id="sidebar">
+        <section
+          style={style.sidebar}
+          id="sidebar">
           <section id="intro">
             <header>
-              <LoginNav
-                handler={this.handleClick}
-                isLogin={localStorage.getItem("token")!==""}
-              />
               <Observer>
                 {()=><h2>{mobxStore.judul.nilai}</h2>}
               </Observer>
               <h2>{this.state.judul.nilai}</h2>
               <p>{this.state.deskripsi.nilai}</p>
+              <LoginNav
+                handler={this.handleClick}
+                isLogin={localStorage.getItem("token")!==""}
+              />
             </header>
           </section>
           <section id="footer">

@@ -50,15 +50,6 @@ class LoginNav extends React.Component{
               <li>
                 <Link
                   className="button"
-                  to={`/penulis/`}
-                  replace
-                >
-                  Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="button"
                   to={`/penulis/artikel`}
                   replace
                 >

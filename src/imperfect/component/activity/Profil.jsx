@@ -8,8 +8,10 @@ import ApiHelper from "../../../json/ApiHelper";
 import {Observer} from "mobx-react/custom.module";
 import mobxStore from "../../../mobx/mobxStore";
 import FileBase64 from "react-file-base64";
+import CroppieView from "../view/CroppieView";
 // import {alertify} from 'alertifyjs'
 const alertify=require('alertify.js');
+const Croppie=require('croppie');
 export default class Profil extends Component {
   componentWillMount(){
     ApiHelper.penulisManusiaSaya(()=>{
@@ -35,24 +37,24 @@ export default class Profil extends Component {
                 </div>
                 <h3>Ubah Gambar</h3>
                 <div className="post">
-                  {mobxStore.penulisManusiaSayaUbah.gambar ? (
-                    <div className="12u$">
-                      <span className="image fit">
-                        <img
-                          className="post"
-                          src={mobxStore.penulisManusiaSayaUbah.gambar}
-                        />
-                      </span>
-                    </div>
-                  ):(
-                    <div/>
-                  )}
                   <FileBase64
                     multiple={false}
                     onDone={(file)=>{
-                      mobxStore.penulisManusiaSayaUbah.gambar=file.base64;
+                      mobxStore.croppie=file.base64;
                     }}
                   />
+                  {mobxStore.croppie ? (
+                    <CroppieView
+                      width={300}
+                      height={300}
+                      base64={mobxStore.croppie}
+                      handler={(base64)=>{
+                        mobxStore.penulisManusiaSayaUbah.gambar=base64
+                      }}
+                    />
+                  ):(
+                    <div/>
+                  )}
                   <button
                     onClick={()=>{
                       if(mobxStore.penulisManusiaSayaUbah.gambar!==''){

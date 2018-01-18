@@ -11,6 +11,8 @@ export default class TextAreaLabel extends React.Component{
       <div>
         <h5>{this.props.title}</h5>
         <textarea
+          cols='60'
+          rows='8'
           maxLength={panjang}
           style={css.text}
           name={this.props.name}

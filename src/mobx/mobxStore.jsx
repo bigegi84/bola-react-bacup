@@ -48,6 +48,9 @@ export default observable(
 
       }
     },
+    tamuArtikelPaginasi:{
+      data:[]
+    },
     tamuMenuArtikel:[],
     tamuMenuArtikelPaginasi:{
       data:[]
