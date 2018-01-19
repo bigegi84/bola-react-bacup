@@ -11,7 +11,7 @@ class CroppieView extends React.Component{
     };
   }
   componentDidMount(){
-    const el =this.refs.croppie;
+    const el=this.refs.croppie;
     const vanilla=new Croppie(el, {
       viewport: {
         width:this.props.width,
@@ -25,6 +25,26 @@ class CroppieView extends React.Component{
     vanilla.customClass='6u$';
     vanilla.bind({
       url:this.props.base64,
+      orientation: 4
+    });
+    this.setState({croppie:vanilla})
+  }
+  componentWillReceiveProps(nextProps){
+    const el=this.refs.croppie;
+    el.innerHTML="";
+    const vanilla=new Croppie(el, {
+      viewport: {
+        width:nextProps.width,
+        height:nextProps.height
+      },
+      boundary: {
+        width:'auto',
+        height:400
+      },
+    });
+    vanilla.customClass='6u$';
+    vanilla.bind({
+      url:nextProps.base64,
       orientation: 4
     });
     this.setState({croppie:vanilla})

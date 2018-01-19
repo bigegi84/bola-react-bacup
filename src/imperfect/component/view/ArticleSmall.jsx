@@ -16,7 +16,6 @@ export default class ArtikelKecil extends React.Component{
     const data=this.props.data;
     const action=this.props.action;
     let gambar=(<div/>);
-    console.log(typeof data.gambar.url);
     if(data.gambar.url!==undefined) {
       gambar=(
         <a className="image featured">

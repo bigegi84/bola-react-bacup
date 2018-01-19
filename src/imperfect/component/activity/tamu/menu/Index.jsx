@@ -9,7 +9,14 @@ class Index extends Component {
     ApiHelper.getTamuMenuArtikelPaginasi(this.props.match.params.slug,this.props.match.params.page);
   }
   componentWillReceiveProps(nextProps){
-    ApiHelper.getTamuMenuArtikelPaginasi(nextProps.match.params.slug,nextProps.match.params.page);
+    if(
+      this.props.match.params.slug===nextProps.match.params.slug&&
+      this.props.match.params.page===nextProps.match.params.page
+    ){
+
+    }else{
+      ApiHelper.getTamuMenuArtikelPaginasi(nextProps.match.params.slug,nextProps.match.params.page);
+    }
   }
   render() {
     const page=parseInt(this.props.match.params.page);

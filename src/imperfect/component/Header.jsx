@@ -30,7 +30,9 @@ class Header extends React.Component{
             {()=>{
               return (
                 <Link
-                  to={`/tamu`}>
+                  to={`/tamu/1`}
+                  replace
+                >
                   {mobxStore.judul.nilai}
                 </Link>
               )

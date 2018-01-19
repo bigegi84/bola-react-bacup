@@ -13,6 +13,12 @@ import CroppieView from "../view/CroppieView";
 const alertify=require('alertify.js');
 const Croppie=require('croppie');
 export default class Profil extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      croppie:""
+    }
+  }
   componentWillMount(){
     ApiHelper.penulisManusiaSaya(()=>{
       mobxStore.penulisManusiaSayaUbah.nama=mobxStore.penulisManusiaSaya.nama;
@@ -40,14 +46,14 @@ export default class Profil extends Component {
                   <FileBase64
                     multiple={false}
                     onDone={(file)=>{
-                      mobxStore.croppie=file.base64;
+                      this.setState({croppie:file.base64})
                     }}
                   />
-                  {mobxStore.croppie ? (
+                  {this.state.croppie ? (
                     <CroppieView
                       width={300}
                       height={300}
-                      base64={mobxStore.croppie}
+                      base64={this.state.croppie}
                       handler={(base64)=>{
                         mobxStore.penulisManusiaSayaUbah.gambar=base64
                       }}
@@ -59,6 +65,7 @@ export default class Profil extends Component {
                     onClick={()=>{
                       if(mobxStore.penulisManusiaSayaUbah.gambar!==''){
                         ApiHelper.penulisManusiaSayaUbah((pesan)=>{
+                          mobxStore.croppie='';
                           alertify.success(pesan);
                         })
                       }else{
