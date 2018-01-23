@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import {Route} from "react-router";
-import {HashRouter} from 'react-router-dom';
+import {HashRouter, Redirect,BrowserRouter} from 'react-router-dom';
 import ImperfectNav from './ImperfectNav';
-import Home from './activity/Home';
 import TamuMasuk from "./activity/tamu/Masuk";
 import TamuIndex from "./activity/tamu/Index";
 import TamuArtikel from "./activity/tamu/artikel/Index";
 import TamuMenuIndex from "./activity/tamu/menu/Index";
 // penulis
-import PenulisIndex from "./activity/penulis/Index";
 import PenulisManusiaSaya from "./activity/Profil";
 import PenulisArtikel from "./activity/penulis/artikel/Index";
 import PenulisArtikelBuat from "./activity/penulis/artikel/Buat";
@@ -23,18 +21,20 @@ import PengurusManusiaBuat from "./activity/pengurus/manusia/Buat";
 class ImperfectRoute extends Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter
+      >
         <ImperfectNav>
-          <Route exact path="/" component={TamuIndex}/>
+          <Route exact path="/" render={() => (
+            <Redirect to="/tamu/artikel/semua/1"/>
+          )}/>
           <Route exact path="/penulis/profil" component={PenulisManusiaSaya}/>
           {/*tamu*/}
-          <Route exact path="/tamu/:hal" component={TamuIndex}/>
-          <Route exact path="/tamu/artikel/:slug" component={TamuArtikel}/>
+          <Route exact path="/tamu/artikel/semua/:hal" component={TamuIndex}/>
+          <Route exact path="/tamu/artikel/satu/:slug" component={TamuArtikel}/>
           <Route exact path="/tamu/masuk" component={TamuMasuk}/>
           <Route exact path="/tamu/menu/:slug/:page" component={TamuMenuIndex}/>
           {/*penulis*/}
-          <Route exact path="/penulis" component={PenulisIndex}/>
-          <Route exact path="/penulis/artikel" component={PenulisArtikel}/>
+          <Route exact path="/penulis/artikel/semua/:hal" component={PenulisArtikel}/>
           <Route exact path="/penulis/artikel/buat" component={PenulisArtikelBuat}/>
           <Route exact path="/penulis/artikel/saya/ubah/:slug" component={PenulisArtikelSayaUbah}/>
           {/*pengurus*/}
@@ -45,7 +45,7 @@ class ImperfectRoute extends Component {
           <Route exact path="/pengurus/manusia" component={PengurusManusia}/>
           <Route exact path="/pengurus/manusia/buat" component={PengurusManusiaBuat}/>
         </ImperfectNav>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

@@ -1,9 +1,10 @@
 import React,{Component} from "react"
 import ArticleList from '../../../list/ArticleList'
-import ApiHelper from "../../../../../json/ApiHelper";
+import ApiHelper from "../../../../../helper/ApiHelper";
 import mobxStore from "../../../../../mobx/mobxStore";
 import {Observer} from "mobx-react/custom.module";
 import {Link} from "react-router-dom";
+import TampilanHelper from "../../../../../helper/TampilanHelper";
 class Index extends Component {
   componentWillMount(){
     ApiHelper.getTamuMenuArtikelPaginasi(this.props.match.params.slug,this.props.match.params.page);
@@ -19,52 +20,15 @@ class Index extends Component {
     }
   }
   render() {
-    const page=parseInt(this.props.match.params.page);
     return (
       <Observer>
         {()=>{
-          const lanjut_hal=page+1;
-          let lanjut=true;
-          if(page>=mobxStore.tamuMenuArtikelPaginasi.last_page){
-            lanjut=false
-          }
-          let lanjutView=(
-            <a className="disabled button big next">
-              Next Page
-            </a>
-          );
-          if(lanjut){
-            lanjutView=(
-              <Link
-                className="button big next"
-                to={"/tamu/menu/"+this.props.match.params.slug+"/"+lanjut_hal}
-                replace
-              >
-                Next Page
-              </Link>
-            )
-          }
-          const sebelum_hal=page-1;
-          let sebelum=true;
-          if(page===1){
-            sebelum=false
-          }
-          let sebelumView=(
-            <a className="disabled button big previous">
-              Previous Page
-            </a>
-          );
-          if(sebelum){
-            sebelumView=(
-              <Link
-                className="button big previous"
-                to={"/tamu/menu/"+this.props.match.params.slug+"/"+sebelum_hal}
-                replace
-              >
-                Previous Page
-              </Link>
-            )
-          }
+          const slug=this.props.match.params.slug;
+          const url='/tamu/menu/'+slug;
+          const hal=this.props.match.params.page;
+          const halTerakhir=mobxStore.tamuMenuArtikelPaginasi.last_page;
+          const sebelumView=TampilanHelper.ambilTampilanSebelumnya(url,hal);
+          const lanjutView=TampilanHelper.ambilTampilanLanjut(url,hal,halTerakhir);
           return(
             <div>
               <ArticleList data={mobxStore.tamuMenuArtikelPaginasi.data}/>

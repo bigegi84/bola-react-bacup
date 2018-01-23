@@ -1,22 +1,16 @@
 import React,{Component} from "react"
-// import {Croppie} from 'croppie';
-import axios from 'axios'
-import {Url} from '../../../../../config'
-import ArticleList from '../../../list/ArticleList'
 import TextLabel from '../../../form/TextLabel'
 import TextAreaLabel from '../../../form/TextAreaLabel'
 import Button from "../../../view/Button";
 import DropDownLabel from "../../../form/DropDownLabel";
-import MultipleLabel from "../../../form/MultipleLabel";
 import FileBase64 from "react-file-base64";
 import mobxStore from "../../../../../mobx/mobxStore";
 import {Observer} from "mobx-react/custom.module";
-import GambarKecil from "../../../view/GambarKecil";
-import Kosong from "../../../view/Kosong";
-import ApiHelper from "../../../../../json/ApiHelper";
+import ApiHelper from "../../../../../helper/ApiHelper";
 import 'croppie/croppie.css'
 import CroppieView from "../../../view/CroppieView";
-// import Croppie from "react-croppie";
+import hashHistory from "../../../AppHistory";
+import TagForm from "../../../form/TagForm";
 const alertify=require('alertify.js');
 const Croppie=require('croppie');
 export default class Index extends Component {
@@ -143,13 +137,14 @@ export default class Index extends Component {
               )
             }}
           </Observer>
+          <TagForm/>
           <Button
             title="Buat Artikel"
             handler={()=>{
               this.validasi(()=>{
                 ApiHelper.penulisArtikelBuat(()=>{
                   alertify.success('Buat Berhasil');
-                  this.props.history.push('/penulis');
+                  hashHistory.push('/penulis/artikel/semua/1');
                 })
               });
             }}

@@ -1,14 +1,7 @@
 import axios from "axios";
 import {Url} from "../config";
 import mobxStore from "../mobx/mobxStore";
-import hashHistory from "../imperfect/component/AppHistory";
-function withToken() {
-  return {
-    params: {
-      token: localStorage.getItem('token')
-    },
-  }
-}
+import BantuanDasar from "./BantuanDasar";
 class ApiHelper{
   static tamuMasuk(callback){
     axios({
@@ -52,13 +45,14 @@ class ApiHelper{
         console.log(error);
       });
   }
-  static tamuArtikelSatu(kolom,nilai){
+  static tamuArtikelSatu(kolom,nilai,pertama=true){
     axios({
       url: Url+'tamu/artikel/satu',
       method: 'GET',
       params:{
         kolom:kolom,
-        nilai:nilai
+        nilai:nilai,
+        pertama:pertama
       }
     })
       .then((response)=>{
@@ -71,6 +65,28 @@ class ApiHelper{
       })
       .catch((error)=>{
         console.log(error);
+      });
+  }
+  static tamuArtikelSatuSuka(kolom,nilai,sukses){
+    axios({
+      url: Url+'tamu/artikel/satu/suka',
+      method: 'GET',
+      params:{
+        kolom:kolom,
+        nilai:nilai
+      }
+    })
+      .then((response)=>{
+        let r=response.data;
+        if(r.sukses){
+          BantuanDasar.dasarKeberhasilan(r.pesan);
+          sukses()
+        }else{
+          BantuanDasar.dasarKegagalan(JSON.stringify(r.pesan))
+        }
+      })
+      .catch((error)=>{
+      BantuanDasar.dasarKegagalan(error)
       });
   }
   // penulis
@@ -95,6 +111,28 @@ class ApiHelper{
       .catch((error)=>{
         console.log(error);
       });
+  }
+  static penulisManusiaSayaTambal(callback){
+    axios({
+      url: Url+'penulis/manusia/saya/tambal',
+      method: 'POST',
+      params: {
+        token: localStorage.getItem('token')
+      },
+      data:JSON.stringify(mobxStore.penulisManusiaSayaTambal)
+    })
+      .then((response)=>{
+        let r=response.data;
+        if(r.sukses){
+          this.penulisManusiaSaya();
+          callback(r.pesan)
+        }else{
+          BantuanDasar.dasarKegagalan(JSON.stringify(r))
+        }
+    })
+      .catch((kesalahan)=>{
+      BantuanDasar.dasarKegagalan(kesalahan)
+    });
   }
   static penulisManusiaSayaUbah(callback){
     axios(
@@ -135,6 +173,24 @@ class ApiHelper{
         }else{
           alert(JSON.stringify(r))
         }
+      })
+      .catch((error)=>{
+        console.log(error);
+      });
+  }
+  static penulisArtikelSayaSemuaPaginasi(per_hal=10,hal){
+    axios(
+      {
+        url: Url+'penulis/artikel/saya/paginasi',
+        method: 'GET',
+        params: {
+          token: localStorage.getItem('token'),
+          page:hal,
+          per_hal:per_hal
+        },
+      })
+      .then((response)=>{
+        mobxStore.penulisArtikelSayaSemuaPaginasi=response.data;
       })
       .catch((error)=>{
         console.log(error);
@@ -209,6 +265,7 @@ class ApiHelper{
       .then((response)=>{
         let r=response.data;
         if(r.success){
+          BantuanDasar.dasarKeberhasilan(r.message);
           callback()
         }else{
           alert(JSON.stringify(r))
@@ -218,7 +275,7 @@ class ApiHelper{
         console.log(error);
       });
   }
-  static penulisArtikelHapus(nilai){
+  static penulisArtikelHapus(nilai,callback){
     axios(
       {
         url: Url+'penulis/artikel/hapus/'+nilai,
@@ -229,8 +286,9 @@ class ApiHelper{
       })
       .then((response)=>{
         let r=response.data;
-        if(r.success){
-          this.penulisArtikel()
+        if(r.sukses){
+          BantuanDasar.dasarKeberhasilan(r.pesan);
+          callback()
         }else{
           alert(JSON.stringify(r))
         }

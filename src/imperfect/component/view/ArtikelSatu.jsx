@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import BantuanTanggal from "../../../bantuan/BantuanTanggal";
+import ApiHelper from "../../../helper/ApiHelper";
 const style={
   p:{
     textAlign:'justify'
@@ -21,7 +23,11 @@ export default class ArtikelSatu extends React.Component{
             </p>
           </div>
           <div className="meta">
-            <time className="published" dateTime="2015-11-01">{data.waktu}</time>
+            <time
+              className="published"
+              dateTime={data.waktu}
+            >
+              {BantuanTanggal.waktuYangLalu(data.waktu)}</time>
             <a className="author">
               <span className="name">{data.manusia.pengguna}</span>
               <img
@@ -31,6 +37,12 @@ export default class ArtikelSatu extends React.Component{
             </a>
           </div>
         </header>
+        <a className="image featured">
+          <img
+            src={data.gambar.url}
+            alt=""
+          />
+        </a>
         <p
           style={style.p}
         >
@@ -44,13 +56,18 @@ export default class ArtikelSatu extends React.Component{
               >{data.menu.nama}</Link></li>
             <li>
               <a
+                title="Disukai"
                 className="icon fa-heart"
+                onClick={()=>{
+                  this.props.klikSuka();
+                }}
               >
-                -
+                {data.disukai}
               </a>
             </li>
             <li>
               <a
+                title="Komentar"
                 className="icon fa-comment"
               >
                 -
@@ -58,6 +75,7 @@ export default class ArtikelSatu extends React.Component{
             </li>
             <li>
               <a
+                title="Dilihat"
                 className="icon fa-eye"
               >
                 {data.dilihat}

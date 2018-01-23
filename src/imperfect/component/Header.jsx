@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import {observer} from "mobx-react";
 import mobxStore from "../../mobx/mobxStore";
 import {Observer} from "mobx-react/custom.module";
-import ApiHelper from "../../json/ApiHelper";
+import ApiHelper from "../../helper/ApiHelper";
 class Header extends React.Component{
   constructor(props) {
     super(props);
@@ -30,7 +30,7 @@ class Header extends React.Component{
             {()=>{
               return (
                 <Link
-                  to={`/tamu/1`}
+                  to={`/tamu/artikel/semua/1`}
                   replace
                 >
                   {mobxStore.judul.nilai}
@@ -59,7 +59,10 @@ class Header extends React.Component{
               </form>
             </li>
             <li className="menu">
-              <a className="fa-bars">Menu</a>
+              <a
+                className="fa-bars"
+                href="#menu"
+              >Menu</a>
             </li>
           </ul>
         </nav>

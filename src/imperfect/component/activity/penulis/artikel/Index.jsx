@@ -1,120 +1,75 @@
 import React,{Component} from "react"
-import axios from 'axios'
-import {Observer,observer} from 'mobx-react'
-import {Url} from '../../../../../config'
+import {Observer} from 'mobx-react'
 import ArticleList from '../../../list/ArticleList'
 import Button from "../../../view/Button";
 import mobxStore from "../../../../../mobx/mobxStore";
-import ApiHelper from "../../../../../json/ApiHelper";
-import hashHistory from "../../../AppHistory";
+import ApiHelper from "../../../../../helper/ApiHelper";
+import TampilanHelper from "../../../../../helper/TampilanHelper";
+import AppHistory from '../../../AppHistory'
 class Index extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data:[],
-      komen:{},
-      interval:{}
-    };
-    this.komenChange = this.komenChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.kirimClick=this.kirimClick.bind(this);
-  }
   componentWillMount(){
-    this.loadData();
+    this.loadData(this.props.match.params.hal)
   }
-  loadData(){
-    ApiHelper.penulisArtikel()
+  componentWillReceiveProps(nextProps){
+    if(
+      this.props.match.params.hal===nextProps.match.params.hal
+    ){
+
+    }else{
+      this.loadData(nextProps.match.params.hal);
+    }
   }
-  komenChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    console.log(name);
-    console.log(this.state.komen);
-    let komen = this.state.komen;
-    komen[name]=value;
-    this.setState({
-      komen
-    });
-  }
-  handleSubmit(){
-    fetch(Url+'login', {
-      method: 'POST',
-      body: JSON.stringify({
-        value: this.state.value,
-        password: this.state.password
-      })
-    }).then((response) => response.json())
-      .then((r) => {
-        this.props.history.push('/author/dashboard');
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-  kirimClick(e){
-    const self=this;
-    e.preventDefault();
-    console.log('ini komen');
-    console.log(this.state.komen);
-    axios({
-      url: Url+'tamu/komen',
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-        },
-        data: JSON.stringify(self.state.komen)
-      })
-      .then(function (response) {
-        let r=response.data;
-        console.log(r);
-        if(r.success){
-          self.loadData();
-        }else{
-          alert(JSON.stringify(r))
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  loadData(hal){
+    ApiHelper.penulisArtikelSayaSemuaPaginasi(3,hal)
   }
   render() {
     return (
-      <div>
-        <article className="post">
-          <section>
-            <h3>Arikel yang telah di buat: {this.props.store.penulisArtikel.length}</h3>
-            <Button
-              title="Buat Artikel"
-              handler={()=>{
-                window.location.href='#/penulis/artikel/buat'
-              }}
-            />
-          </section>
-        </article>
-        <ArticleList
-          pk={'id'}
-          klikUbah={(nilai)=>{
-            hashHistory.push('/penulis/artikel/saya/ubah/'+nilai)
-          }}
-          klikHapus={(nilai)=>{
-            ApiHelper.penulisArtikelHapus(nilai)
-          }}
-          action={true}
-          data={this.props.store.penulisArtikel}
-        />
-      </div>
+      <Observer>
+        {()=>{
+          const url='/penulis/artikel/semua/';
+          const hal=this.props.match.params.hal;
+          const halTerakhir=mobxStore.penulisArtikelSayaSemuaPaginasi.last_page;
+          const tampilanLanjut=TampilanHelper.ambilTampilanLanjut(url,hal,halTerakhir);
+          const tampilanSebelumnya=TampilanHelper.ambilTampilanSebelumnya(url,hal);
+          return(
+            <div>
+              <article className="post">
+                <section>
+                  <h3>Arikel yang telah di buat: {mobxStore.penulisArtikelSayaSemuaPaginasi.total}</h3>
+                  <Button
+                    title="Buat Artikel"
+                    handler={()=>{
+                      AppHistory.push('/penulis/artikel/buat')
+                    }}
+                  />
+                </section>
+              </article>
+              <ArticleList
+                pk={'id'}
+                klikUbah={(nilai)=>{
+                  AppHistory.push('/penulis/artikel/saya/ubah/'+nilai)
+                }}
+                klikHapus={(nilai)=>{
+                  ApiHelper.penulisArtikelHapus(nilai,()=>{
+                    this.loadData()
+                  })
+                }}
+                action={true}
+                data={mobxStore.penulisArtikelSayaSemuaPaginasi.data}
+              />
+              <ul className="actions pagination">
+                <li>
+                  {tampilanSebelumnya}
+                </li>
+                <li>
+                  {tampilanLanjut}
+                </li>
+              </ul>
+            </div>
+          )
+        }}
+      </Observer>
     )
   }
 }
-const View=observer(Index);
-class withMobx extends Component{
-  render(){
-    return(
-      <View
-        store={mobxStore}
-      />
-    )
-  }
-}
-export default withMobx
+export default Index

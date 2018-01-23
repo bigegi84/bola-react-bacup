@@ -23,7 +23,9 @@ class LoginNav extends React.Component{
   render(){
     if (this.props.isLogin) {
       return (
-        <MiniPost>
+        <MiniPost
+          id="menu"
+        >
           <Panel>
             <p>Pengaturan</p>
             <DaftarVertikal>
@@ -50,7 +52,7 @@ class LoginNav extends React.Component{
               <li>
                 <Link
                   className="button"
-                  to={`/penulis/artikel`}
+                  to={`/penulis/artikel/semua/1`}
                   replace
                 >
                   Artikel

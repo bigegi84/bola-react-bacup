@@ -1,37 +1,28 @@
 import React,{Component} from "react"
 import axios from 'axios'
 import {Url} from '../../../../../config'
-import ArticleList from '../../../list/ArticleList'
-import TextLabel from '../../../form/TextLabel'
-import TextAreaLabel from '../../../form/TextAreaLabel'
 import Button from "../../../view/Button";
-import DropDownLabel from "../../../form/DropDownLabel";
-import MultipleLabel from "../../../form/MultipleLabel";
 import ArtikelForm from "../../../form/ArtikelForm";
-import ApiHelper from "../../../../../json/ApiHelper";
+import ApiHelper from "../../../../../helper/ApiHelper";
 import {Observer} from "mobx-react/custom.module";
 import mobxStore from "../../../../../mobx/mobxStore";
 import hashHistory from "../../../AppHistory";
+import BantuanValidasi from "../../../../../bantuan/BantuanValidasi";
 export default class Index extends Component {
   componentWillMount(){
     ApiHelper.penulisArtikelSayaSatu('slug',this.props.match.params.slug,()=>{
       mobxStore.penulisArtikelSayaUbah.judul=mobxStore.penulisArtikelSayaSatu.judul;
       mobxStore.penulisArtikelSayaUbah.konten=mobxStore.penulisArtikelSayaSatu.konten;
       mobxStore.penulisArtikelSayaUbah.deskripsi=mobxStore.penulisArtikelSayaSatu.deskripsi;
-      mobxStore.penulisArtikelSayaUbah.id_menu=parseInt(mobxStore.penulisArtikelSayaSatu.id_menu)
+      mobxStore.penulisArtikelSayaUbah.id_menu=mobxStore.penulisArtikelSayaSatu.id_menu;
+      // mobxStore.penulisArtikelSayaUbah.gambar=mobxStore.penulisArtikelSayaSatu.gambar.url
     })
   }
   inputChange(event) {
     const target=event.target;
     let value=target.type === 'checkbox' ? target.checked : target.value;
     const name=target.name;
-    switch (name) {
-      case "id_menu":
-        value=parseInt(value);
-        break;
-    }
     mobxStore.penulisArtikelSayaUbah[name]=value;
-    console.log(mobxStore.penulisArtikelSayaUbah)
   }
   tagChange(data) {
     console.log("tag change",this.state.tag);
@@ -77,6 +68,7 @@ export default class Index extends Component {
                   judulNilai={mobxStore.penulisArtikelSayaUbah.judul}
                   kontenNilai={mobxStore.penulisArtikelSayaUbah.konten}
                   deskripsiNilai={mobxStore.penulisArtikelSayaUbah.deskripsi}
+                  gambarNilai={mobxStore.penulisArtikelSayaSatu.gambar.url}
                   menuData={mobxStore.menu}
                   change={(e)=>{
                     this.inputChange(e)
@@ -88,13 +80,17 @@ export default class Index extends Component {
           <Button
             title="Ubah Artikel"
             handler={()=>{
-              ApiHelper.penulisArtikelUbah(
-                'slug',
-                this.props.match.params.slug,
+              BantuanValidasi.artikel(mobxStore.penulisArtikelSayaUbah,
                 ()=>{
-                  hashHistory.push('/penulis')
+                  ApiHelper.penulisArtikelUbah(
+                    'slug',
+                    this.props.match.params.slug,
+                    ()=>{
+                      hashHistory.push('/penulis/artikel/semua/1')
+                    }
+                  )
                 }
-                )
+                );
             }}
           />
         </article>

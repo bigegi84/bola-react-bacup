@@ -2,7 +2,8 @@ import React,{Component} from "react"
 import TextLabel from "../../../form/TextLabel";
 import Button from "../../../view/Button";
 import mobxStore from "../../../../../mobx/mobxStore";
-import ApiHelper from "../../../../../json/ApiHelper";
+import ApiHelper from "../../../../../helper/ApiHelper";
+import AppHistory from '../../../AppHistory'
 export default class VariabelForm extends Component {
   render() {
     return (
@@ -25,7 +26,7 @@ export default class VariabelForm extends Component {
             title="Buat"
             handler={(e)=>{
               ApiHelper.pengurusBuatVariabel();
-              window.location.href = "#/pengurus/variabel";
+              AppHistory.push('/pengurus/variabel')
             }}
           />
         </article>

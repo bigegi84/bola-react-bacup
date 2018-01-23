@@ -7,7 +7,11 @@ class PenulisNav extends React.Component{
       <section
         id="menu">
         <section>
-          <form className="search" method="get" action="#">
+          <form
+            className="search"
+            method="get"
+            action="#"
+          >
             <input type="text" name="query" placeholder="Search" />
           </form>
         </section>

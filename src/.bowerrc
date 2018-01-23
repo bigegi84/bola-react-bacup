@@ -1,5 +1,0 @@
-{
-  "directory": "bower_components",
-  "proxy": "proxyagit.astragraphia.local:8000",
-  "https-proxy":"proxyagit.astragraphia.local:8000"
-}

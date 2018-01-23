@@ -1,17 +1,12 @@
 import React,{Component} from "react"
-import axios from 'axios'
-import {Url} from '../../../config'
-import ArticleList from '../list/ArticleList'
 import TextLabel from '../form/TextLabel'
 import Button from "../view/Button";
-import ApiHelper from "../../../json/ApiHelper";
+import ApiHelper from "../../../helper/ApiHelper";
 import {Observer} from "mobx-react/custom.module";
 import mobxStore from "../../../mobx/mobxStore";
 import FileBase64 from "react-file-base64";
 import CroppieView from "../view/CroppieView";
-// import {alertify} from 'alertifyjs'
 const alertify=require('alertify.js');
-const Croppie=require('croppie');
 export default class Profil extends Component {
   constructor(props){
     super(props);
@@ -36,9 +31,12 @@ export default class Profil extends Component {
               <div className="post">
                 <div className="12u$ post">
                   <span className="image fit">
-                    <img
-                      src={data.gambar.url}
-                    />
+                    {data.gambar?(
+                      <img
+                        src={data.gambar.url}
+                        alt=""
+                      />
+                    ):(<div/>)}
                   </span>
                 </div>
                 <h3>Ubah Gambar</h3>
@@ -55,7 +53,8 @@ export default class Profil extends Component {
                       height={300}
                       base64={this.state.croppie}
                       handler={(base64)=>{
-                        mobxStore.penulisManusiaSayaUbah.gambar=base64
+                        mobxStore.penulisManusiaSayaTambal.kolom='gambar';
+                        mobxStore.penulisManusiaSayaTambal.nilai=base64
                       }}
                     />
                   ):(
@@ -63,8 +62,8 @@ export default class Profil extends Component {
                   )}
                   <button
                     onClick={()=>{
-                      if(mobxStore.penulisManusiaSayaUbah.gambar!==''){
-                        ApiHelper.penulisManusiaSayaUbah((pesan)=>{
+                      if(mobxStore.penulisManusiaSayaTambal.nilai!==''){
+                        ApiHelper.penulisManusiaSayaTambal((pesan)=>{
                           mobxStore.croppie='';
                           alertify.success(pesan);
                         })

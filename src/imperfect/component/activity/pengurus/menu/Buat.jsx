@@ -1,7 +1,6 @@
 import React,{Component} from "react"
 import axios from 'axios'
 import {Url} from '../../../../../config'
-import TableList from "../../../list/TableList";
 import TextLabel from "../../../form/TextLabel";
 import Button from "../../../view/Button";
 export default class Index extends Component {

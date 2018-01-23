@@ -1,7 +1,7 @@
 import React,{Component} from "react"
 import TableList from "../../../list/TableList";
 import {Link} from "react-router-dom";
-import ApiHelper from "../../../../../json/ApiHelper";
+import ApiHelper from "../../../../../helper/ApiHelper";
 import {Observer} from "mobx-react";
 import mobxStore from "../../../../../mobx/mobxStore";
 class Index extends Component {

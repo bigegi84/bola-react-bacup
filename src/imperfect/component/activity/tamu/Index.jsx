@@ -1,14 +1,10 @@
 import React,{Component} from "react"
-import axios from 'axios'
-import {Url} from '../../../../config'
 import ArticleList from '../../list/ArticleList'
-import TextLabel from '../../form/TextLabel'
-import Button from "../../view/Button";
-import stateBola from "../../../../index";
-import ApiHelper from "../../../../json/ApiHelper";
+import ApiHelper from "../../../../helper/ApiHelper";
 import {Observer} from "mobx-react/custom.module";
 import mobxStore from "../../../../mobx/mobxStore";
 import {Link} from "react-router-dom";
+import TampilanHelper from "../../../../helper/TampilanHelper";
 export default class Index extends Component {
   componentWillMount(){
     ApiHelper.getTamuArtikelSemuaPaginasi(this.props.match.params.hal);
@@ -31,48 +27,11 @@ export default class Index extends Component {
       <div>
         <Observer>
           {()=>{
-            const lanjut_hal=page+1;
-            let lanjut=true;
-            if(page>=mobxStore.tamuArtikelPaginasi.last_page){
-              lanjut=false
-            }
-            let lanjutView=(
-              <a className="disabled button big next">
-                Next Page
-              </a>
-            );
-            if(lanjut){
-              lanjutView=(
-                <Link
-                  className="button big next"
-                  to={"/tamu/"+lanjut_hal}
-                  replace
-                >
-                  Next Page
-                </Link>
-              )
-            }
-            const sebelum_hal=page-1;
-            let sebelum=true;
-            if(page===1){
-              sebelum=false
-            }
-            let sebelumView=(
-              <a className="disabled button big previous">
-                Previous Page
-              </a>
-            );
-            if(sebelum){
-              sebelumView=(
-                <Link
-                  className="button big previous"
-                  to={"/tamu/"+sebelum_hal}
-                  replace
-                >
-                  Previous Page
-                </Link>
-              )
-            }
+            const url='/tamu/';
+            const halTerakhir=mobxStore.tamuArtikelPaginasi.last_page;
+            const hal=this.props.match.params.hal;
+            const sebelumView=TampilanHelper.ambilTampilanSebelumnya(url,hal);
+            const lanjutView=TampilanHelper.ambilTampilanLanjut(url,hal,halTerakhir);
             return(
               <div>
                 <ArticleList data={mobxStore.tamuArtikelPaginasi.data}/>

@@ -1,10 +1,8 @@
 import React,{Component} from "react"
-import axios from 'axios'
-import {Url} from '../../../../config'
 import TextLabel from '../../form/TextLabel'
 import Button from "../../view/Button";
 import mobxStore from "../../../../mobx/mobxStore";
-import ApiHelper from "../../../../json/ApiHelper";
+import ApiHelper from "../../../../helper/ApiHelper";
 import hashHistory from "../../AppHistory";
 import {Observer} from "mobx-react/custom.module";
 export default class Masuk extends Component {
@@ -43,7 +41,7 @@ export default class Masuk extends Component {
           title="Log In"
           handler={()=>{
             ApiHelper.tamuMasuk(()=>{
-              hashHistory.push('/penulis');
+              hashHistory.push('/penulis/artikel/semua/1');
             })
           }}/>
       </article>
