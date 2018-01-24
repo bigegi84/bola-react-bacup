@@ -1,4 +1,3 @@
-import mobx from 'mobx'
 import { observable} from "mobx";
 // class mobxStore {
 //   data=observable("");
@@ -32,6 +31,7 @@ import { observable} from "mobx";
 // const observableTodoStore = new mobxStore();
 export default observable(
   {
+    tema:'',
     croppie:'',
     tamuMasuk:{
       nilai:'',

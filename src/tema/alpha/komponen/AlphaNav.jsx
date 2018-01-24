@@ -16,7 +16,7 @@ const style={
     // minWidth:'20em',
   }
 }
-class ImperfectNav extends React.Component{
+class AlphaNav extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -54,7 +54,7 @@ class ImperfectNav extends React.Component{
     ApiHelper.getCopyright()
   }
   getDeskripsi(){
-    fetch(Url+'tamu/variabel/Deskripsi%20Web',
+    fetch(Url+'tamu/variabel/'+'Deskripsi%20Web',
       {
         method: 'GET',
       })
@@ -152,4 +152,4 @@ class ImperfectNav extends React.Component{
     )
   }
 }
-export default ImperfectNav;
+export default AlphaNav;

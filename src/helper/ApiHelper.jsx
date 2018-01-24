@@ -483,7 +483,7 @@ class ApiHelper{
   static getJudul(){
     axios(
       {
-        url:Url+'tamu/variabel/'+'Judul%20Web',
+        url:Url+'tamu/variabel/Judul%20Web',
         method: 'GET',
       })
       .then((response) => {
@@ -497,7 +497,7 @@ class ApiHelper{
   static getCopyright(){
     axios(
       {
-        url:Url+'tamu/variabel/'+'Copyright',
+        url:Url+'tamu/variabel/Copyright',
         method: 'GET',
       })
       .then((response) => {

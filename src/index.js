@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ImperfectRoute from "./imperfect/component/ImperfectRoute";
 import ApiHelper from "./helper/ApiHelper";
+import App from "./App";
 ApiHelper.getJudul();
 ReactDOM.render(
-  <ImperfectRoute />,
-  document.getElementById('root')
+  <App/>,
+  document.documentElement.parentNode
 );

@@ -2,41 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c9a1f09-c5fb-435a-8447-6f2c44db7137" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/.bowerrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/Index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/logo.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/.babelrc" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/css/ie8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/css/ie9.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/ie/html5shiv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/ie/respond.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/skel.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/util.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/base/_page.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/base/_typography.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_author.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_blurb.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_box.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_button.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_form.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_icon.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_image.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_list.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_mini-post.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_post.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_section.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/components/_table.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/ie8.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/ie9.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_footer.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_header.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_intro.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_main.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_menu.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_sidebar.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/layout/_wrapper.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/libs/_functions.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/libs/_mixins.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/libs/_skel.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/libs/_vars.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/sass/main.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/avatar.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic07.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic08.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic09.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/images/pic12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/theme/html5up-future-imperfect/single.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/AppHistory.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/AppHistory.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/Header.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/Header.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/helper/ApiHelper.jsx" afterPath="$PROJECT_DIR$/src/helper/ApiHelper.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/ImperfectNav.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/ImperfectNav.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/Profil.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/Profil.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/manusia/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/manusia/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/manusia/ManusiaForm.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/manusia/ManusiaForm.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/menu/Buat.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/menu/Buat.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/menu/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/menu/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/variabel/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/variabel/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/variabel/VariabelForm.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/variabel/VariabelForm.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Buat.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Buat.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Ubah.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Ubah.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/Masuk.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/Masuk.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/artikel/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/artikel/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/menu/Index.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/activity/tamu/menu/Index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/form/ArtikelForm.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/form/ArtikelForm.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/nav/LoginNav.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/nav/LoginNav.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/nav/PenulisNav.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/nav/PenulisNav.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/view/ArticleSmall.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/view/ArticleSmall.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/imperfect/component/view/ArtikelSatu.jsx" afterPath="$PROJECT_DIR$/src/imperfect/component/view/ArtikelSatu.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mobx/mobxStore.jsx" afterPath="$PROJECT_DIR$/src/mobx/mobxStore.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/json/ApiHelper.jsx" afterPath="$PROJECT_DIR$/src/helper/ApiHelper.jsx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,45 +88,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ImperfectRoute.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx">
+      <file leaf-file-name="App.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginNav.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/imperfect/component/nav/LoginNav.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImperfectNav.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectNav.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-              <folding>
-                <element signature="e#2490#3166#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            <state relative-caret-position="136">
+              <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -97,12 +100,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="skelInit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/skelInit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/imperfect/component/Header.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+            <state relative-caret-position="-4">
+              <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlphaHtml.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tema/alpha/komponen/AlphaHtml.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="185" column="30" lean-forward="false" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#1305#2164#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,14 +148,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="JSX" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>penulisart</find>
       <find>penulisA</find>
       <find>menu</find>
       <find>ref</find>
@@ -148,6 +183,7 @@
       <find>&quot;menu&quot;</find>
       <find>className=&quot;menu&quot;</find>
       <find>is-menu-visible</find>
+      <find>charse</find>
       <find>class=&quot;</find>
     </findStrings>
     <replaceStrings>
@@ -169,13 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/imperfect/component/history.jsx" />
-        <option value="$PROJECT_DIR$/src/imperfect/component/list/ArticleList.jsx" />
-        <option value="$PROJECT_DIR$/public/theme/html5up-future-imperfect/index.html" />
-        <option value="$PROJECT_DIR$/src/imperfect/component/list/TableList.jsx" />
-        <option value="$PROJECT_DIR$/src/imperfect/component/form/DropDownLabel.jsx" />
-        <option value="$PROJECT_DIR$/src/imperfect/component/form/TextLabel.jsx" />
-        <option value="$PROJECT_DIR$/src/imperfect/component/list/DaftarVertikal.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/view/Panel.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/view/GambarKecil.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/view/Menu.jsx" />
@@ -194,13 +223,10 @@
         <option value="$PROJECT_DIR$/src/imperfect/component/view/ArtikelSatu.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/tamu/artikel/Index.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/form/ArtikelForm.jsx" />
-        <option value="$PROJECT_DIR$/src/mobx/mobxStore.jsx" />
         <option value="$PROJECT_DIR$/src/bantuan/BantuanValidasi.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Ubah.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/tamu/Masuk.jsx" />
         <option value="$PROJECT_DIR$/src/helper/TampilanHelper.jsx" />
-        <option value="$PROJECT_DIR$/src/helper/ApiHelper.jsx" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/imperfect/component/view/ArticleSmall.jsx" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -209,17 +235,27 @@
         <option value="$PROJECT_DIR$/src/config.js" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Buat.jsx" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/penulis/artikel/Index.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/AppHistory.jsx" />
-        <option value="$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/manusia/ManusiaForm.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/activity/pengurus/variabel/VariabelForm.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/nav/PenulisNav.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/Header.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/nav/LoginNav.jsx" />
         <option value="$PROJECT_DIR$/public/theme/html5up-future-imperfect/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/tema/alpha/komponen/AlphaNav.jsx" />
+        <option value="$PROJECT_DIR$/public/tema/html5up-alpha/index.html" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/helper/ApiHelper.jsx" />
+        <option value="$PROJECT_DIR$/src/mobx/mobxStore.jsx" />
         <option value="$PROJECT_DIR$/src/imperfect/component/ImperfectNav.jsx" />
+        <option value="$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx" />
+        <option value="$PROJECT_DIR$/public/tema/html5up-future-imperfect/assets/js/ie/html5shiv.js" />
+        <option value="$PROJECT_DIR$/src/imperfect/component/ImperfectHtml.jsx" />
+        <option value="$PROJECT_DIR$/public/js/skelInit.js" />
+        <option value="$PROJECT_DIR$/src/App.jsx" />
+        <option value="$PROJECT_DIR$/src/tema/alpha/komponen/AlphaHtml.jsx" />
       </list>
     </option>
   </component>
@@ -312,7 +348,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -345,41 +381,6 @@
             <path>
               <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="bola-react" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bola-react" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bola-react" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="html5up-future-imperfect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bola-react" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="html5up-future-imperfect" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bola-react" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-              <item name="html5up-future-imperfect" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bola-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -394,14 +395,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="imperfect" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bola-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bola-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="imperfect" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="nav" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -417,19 +410,19 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\data\dev\gilangegi\bola-react\public" />
-      <recent name="E:\data\dev\gilangegi\bola-react\src" />
-      <recent name="E:\data\dev\gilangegi\bola-react\src\imperfect\component\view" />
-      <recent name="E:\data\dev\gilangegi\bola-react\src\imperfect\component\activity" />
-      <recent name="E:\data\dev\gilangegi\bola-react\src\imperfect\component\activity\penulis\artikel" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\data\dev\gilangegi\bola-react\public\tema" />
       <recent name="E:\data\dev\gilangegi\bola-react\src\helper" />
       <recent name="E:\data\dev\gilangegi\bola-react\src\imperfect\component" />
       <recent name="E:\data\dev\gilangegi\bola-react\src" />
       <recent name="E:\data\dev\gilangegi\bola-react\src\imperfect\component\view" />
-      <recent name="E:\data\dev\gilangegi\bola-react\src\imperfect\component\activity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\data\dev\gilangegi\bola-react\public\js" />
+      <recent name="E:\data\dev\gilangegi\bola-react\public\tema" />
+      <recent name="E:\data\dev\gilangegi\bola-react\src\tema\alpha\komponen" />
+      <recent name="E:\data\dev\gilangegi\bola-react\public\theme" />
+      <recent name="E:\data\dev\gilangegi\bola-react\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -603,25 +596,25 @@
       <workItem from="1516446749175" duration="1465000" />
       <workItem from="1516469249248" duration="1727000" />
       <workItem from="1516612480281" duration="2553000" />
-      <workItem from="1516694082527" duration="11844000" />
+      <workItem from="1516694082527" duration="11909000" />
+      <workItem from="1516740359916" duration="14638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253533000" />
+    <option name="totallyTimeSpent" value="268236000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18080357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28199404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.50895524" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32478634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72991455" sideWeight="0.4910448" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31282052" sideWeight="0.4910448" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -630,6 +623,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -640,11 +634,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.50895524" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32478634" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7606838" sideWeight="0.4910448" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31282052" sideWeight="0.4910448" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3392857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28199404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -669,106 +663,11 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/activity/pengurus/menu/Index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/activity/pengurus/menu/Buat.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/activity/tamu/menu/Index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="30" column="81" lean-forward="false" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/activity/tamu/Index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="32" column="58" lean-forward="false" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/view/ArtikelSatu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/activity/tamu/artikel/Index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/view/GambarKecil.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/BantuanDasar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/activity/Profil.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/static/js/main.19df66bc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="0" column="18844" lean-forward="false" selection-start-line="0" selection-start-column="18844" selection-end-line="0" selection-end-column="18844" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-file-base64/build/build.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-file-base64/src/js/components/react-file-base64.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-file-base64/src/js/components/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bantuan/BantuanValidasi.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -776,23 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mobx/mobxStore.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="102" column="13" lean-forward="false" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/imperfect/component/form/ArtikelForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="54" column="18" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,7 +704,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,31 +711,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="81" lean-forward="false" selection-start-line="0" selection-start-column="81" selection-end-line="0" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/.bowerrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/.bowerrc" />
     <entry file="file://$PROJECT_DIR$/build/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/logobackup.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logobackup.svg" />
     <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
@@ -863,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,9 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="75" column="38" lean-forward="false" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,15 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helper/ApiHelper.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="81" column="36" lean-forward="false" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,14 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -958,14 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="227" lean-forward="false" selection-start-line="3" selection-start-column="227" selection-end-line="3" selection-end-column="227" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/AppHistory.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="6" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1008,7 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="133" column="2" lean-forward="false" selection-start-line="133" selection-start-column="2" selection-end-line="133" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,45 +861,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/imperfect/component/nav/LoginNav.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
+        <state relative-caret-position="340">
           <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="25" column="14" lean-forward="false" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectNav.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-          <folding>
-            <element signature="e#2490#3166#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1070,15 +876,198 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
           <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/theme/html5up-alpha/assets/js/ie/PIE.htc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/imperfect/component/AppHistory.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tema/html5up-alpha/assets/js/ie/PIE.htc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tema/html5up-alpha/elements.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="484" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tema/alpha/komponen/AlphaNav.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="154" column="23" lean-forward="false" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tema/html5up-alpha/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="169" column="53" lean-forward="true" selection-start-line="163" selection-start-column="12" selection-end-line="169" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <element signature="e#441#448#0" expanded="false" />
+            <element signature="e#448#452#0" expanded="false" />
+            <element signature="e#679#686#0" expanded="false" />
+            <element signature="e#686#690#0" expanded="false" />
+            <element signature="e#824#831#0" expanded="false" />
+            <element signature="e#831#835#0" expanded="false" />
+            <element signature="e#1293#1300#0" expanded="false" />
+            <element signature="e#1300#1304#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-load-script/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2554">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/helper/ApiHelper.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="499" column="31" lean-forward="true" selection-start-line="499" selection-start-column="31" selection-end-line="499" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mobx/mobxStore.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectNav.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="56" column="29" lean-forward="false" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+          <folding>
+            <element signature="e#2487#3163#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectRoute.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tema/html5up-future-imperfect/assets/js/ie/html5shiv.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/imperfect/component/ImperfectHtml.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="57" lean-forward="true" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/skel-layout.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/imperfect/component/Header.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        <state relative-caret-position="-4">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/skelInit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tema/alpha/komponen/AlphaHtml.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="185" column="30" lean-forward="false" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1305#2164#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Route} from "react-router";
-import {Redirect,BrowserRouter} from 'react-router-dom';
+import {HashRouter, Redirect,BrowserRouter} from 'react-router-dom';
 import ImperfectNav from './ImperfectNav';
 import TamuMasuk from "./activity/tamu/Masuk";
 import TamuIndex from "./activity/tamu/Index";
