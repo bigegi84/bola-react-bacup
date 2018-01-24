@@ -1,6 +1,6 @@
 import React from 'react'
 import LisTidakBerurutan from "./LisTidakBerurutan";
-import Lis from "./Lis";
+import AlphaLis from "./AlphaLis";
 import ApiHelper from "../../../../helper/ApiHelper";
 import {Observer} from "mobx-react/custom.module";
 import mobxStore from "../../../../mobx/mobxStore";
@@ -16,19 +16,19 @@ class Navigasi extends React.Component{
             let lis=mobxStore.menu;
             lis=lis.map((item,index)=>{
               return(
-                <Lis
+                <AlphaLis
                   key={index}
                 >
                   <a>{item.nama}</a>
-                </Lis>
+                </AlphaLis>
               )
             });
             lis.push(
-              <Lis
+              <AlphaLis
                 key={lis.length}
               >
                 <a>Halo</a>
-              </Lis>
+              </AlphaLis>
             );
             return(
               <LisTidakBerurutan>

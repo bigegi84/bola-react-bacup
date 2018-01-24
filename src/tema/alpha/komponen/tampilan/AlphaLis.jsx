@@ -1,5 +1,5 @@
 import React from 'react'
-class Lis extends React.Component{
+class AlphaLis extends React.Component{
   render(){
     return(
       <li>
@@ -8,4 +8,4 @@ class Lis extends React.Component{
     )
   }
 }
-export default Lis
+export default AlphaLis
