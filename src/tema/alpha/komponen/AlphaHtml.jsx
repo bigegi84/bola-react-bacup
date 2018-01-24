@@ -3,6 +3,8 @@ import Script from "react-load-script";
 import {Observer} from "mobx-react";
 import {Link} from "react-router-dom";
 import mobxStore from "../../../mobx/mobxStore";
+import BarSisi from "./tampilan/BarSisi";
+import Navigasi from "./tampilan/Navigasi";
 class AlphaHtml extends React.Component{
   state={
     jqueryDimuat:false
@@ -44,29 +46,7 @@ class AlphaHtml extends React.Component{
             }}
           </Observer>
         </h1>
-        <nav id="nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>
-              <a href="#" className="icon fa-angle-down">Layouts</a>
-              <ul>
-                <li><a href="generic.html">Generic</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="elements.html">Elements</a></li>
-                <li>
-                  <a href="#">Submenu</a>
-                  <ul>
-                    <li><a href="#">Option One</a></li>
-                    <li><a href="#">Option Two</a></li>
-                    <li><a href="#">Option Three</a></li>
-                    <li><a href="#">Option Four</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#" className="button">Sign Up</a></li>
-          </ul>
-        </nav>
+        <Navigasi/>
       </header>
 
       {/*<!-- Main -->*/}
@@ -76,21 +56,7 @@ class AlphaHtml extends React.Component{
           <p>Just an assorted selection of elements.</p>
         </header>
         <div className="row">
-          <div className="4u 12u$(small)">
-            <section className="box">
-              <h3>Menu</h3>
-              <hr/>
-              <div className="row">
-                <div className="12u 12u(narrower) 12u$(mobilep)">
-                  <ul className="actions vertical">
-                    <li><a href="#" className="button special fit">Default</a></li>
-                    <li><a href="#" className="button fit">Default</a></li>
-                    <li><a href="#" className="button alt fit">Default</a></li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </div>
+          <BarSisi/>
           <div className="8u">
             <section className="box">
               <div className="row">
