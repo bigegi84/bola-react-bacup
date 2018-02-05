@@ -28,6 +28,7 @@
     "react-croppie": "^1.0.0",
     "react-dom": "^16.2.0",
     "react-file-base64": "^1.0.3",
+    "react-image-crop": "^3.0.9",
     "react-load-script": "0.0.6",
     "react-loadscript": "^1.0.2",
     "react-redux": "^5.0.6",

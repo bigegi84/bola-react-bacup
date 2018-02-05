@@ -7,26 +7,33 @@ import ApiHelper from "../../../../../../helper/ApiHelper";
 import AlphaPaginasi from "../../../tampilan/AlphaPaginasi";
 import BantuanTanggal from "../../../../../../bantuan/BantuanTanggal";
 import BantuanWaktu from "../../../../../../bantuan/BantuanWaktu";
-export default class AlphaTamuArtikelSemua extends Component {
-  ambilData(hal){
-    ApiHelper.getTamuArtikelSemuaPaginasi(hal);
+export default class AlphaTamuMenuArtikelSemua extends Component {
+  ambilData(slug,hal){
+    ApiHelper.getTamuMenuArtikelPaginasi(slug,hal);
   }
   componentWillMount(){
-    this.ambilData(this.props.match.params.hal);
+    this.ambilData(this.props.match.params.slug,this.props.match.params.page);
   }
   componentWillReceiveProps(nextProps){
-    if(this.props.match.params.hal!==nextProps.match.params.hal)
-      this.ambilData(nextProps.match.params.hal);
+    if(
+      this.props.match.params.slug===nextProps.match.params.slug&&
+      this.props.match.params.page===nextProps.match.params.page
+    ){
+
+    }else{
+      this.ambilData(nextProps.match.params.slug,nextProps.match.params.page);
+    }
   }
   render() {
     return (
       <Observer>
         {()=>{
-          const jumlah=mobxStore.tamuArtikelPaginasi.total;
-          const hal=this.props.match.params.hal;
-          const halTerakhir=parseInt(mobxStore.tamuArtikelPaginasi.last_page);
-          const url='/penulis/artikel/semua/';
-          const artikelLis=mobxStore.tamuArtikelPaginasi.data.map((item,index)=>{
+          const respon=mobxStore.tamuMenuArtikelPaginasi;
+          const jumlah=respon.total;
+          const hal=this.props.match.params.page;
+          const halTerakhir=parseInt(respon.last_page);
+          const url='/tamu/menu/indonesia/';
+          const artikelLis=respon.data.map((item,index)=>{
             const judul=item.judul;
             const url='/tamu/artikel/satu/'+item.slug;
             const waktu=BantuanWaktu.waktuYangLalu(item.waktu);

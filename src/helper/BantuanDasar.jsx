@@ -1,7 +1,12 @@
-const alertify=require('alertify.js');
 class BantuanDasar{
+  static cekMasuk(){
+    return localStorage.getItem("token")!=='';
+  }
+  static keluar(){
+    localStorage.setItem('token','');
+  }
   static dasarKeberhasilan(pesan){
-    alertify.success(pesan)
+    window.alertify.success(pesan)
   }
   static dasarKegagalan(kesalahan){
     BantuanDasar.beritahuKegagalanKeCatatan(kesalahan);
@@ -11,7 +16,7 @@ class BantuanDasar{
     console.error(kesalahan)
   }
   static beritahuKegagalanKePengguna(kesalahan){
-    alertify.error(kesalahan)
+    window.alertify.error(kesalahan)
   }
 }
 export default BantuanDasar

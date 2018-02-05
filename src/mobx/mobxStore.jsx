@@ -34,7 +34,7 @@ export default observable(
     tema:'',
     croppie:'',
     tamuMasuk:{
-      nilai:'',
+      nilai:'hsjdak',
       sandi:''
     },
     tamuArtikelSatu:{

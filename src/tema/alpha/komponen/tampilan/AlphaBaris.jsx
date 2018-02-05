@@ -1,14 +1,13 @@
 import React from 'react'
 import AlphaKolom from "./AlphaKolom";
-class AlphaUtama extends React.Component{
+export default class AlphaBaris extends React.Component{
   render(){
     return(
-      <AlphaKolom
-        lebar="8"
+      <div
+        className="row"
       >
         {this.props.children}
-      </AlphaKolom>
+      </div>
     )
   }
 }
-export default AlphaUtama

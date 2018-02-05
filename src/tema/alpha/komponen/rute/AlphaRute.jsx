@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
 import {Route, Switch} from "react-router";
-import {Redirect,BrowserRouter} from 'react-router-dom';
+import {Redirect,HashRouter,BrowserRouter,Router} from 'react-router-dom';
 import AlphaTamuArtikelSemua from "../aktifitas/tamu/artikel/AlphaTamuArtikelSemua";
-
+import AlphaTamuMasuk from "../aktifitas/tamu/AlphaTamuMasuk";
+import AlphaWadah from "../AlphaWadah";
+import AppHistory from "../../../../imperfect/component/AppHistory";
+import AlphaPenulisProfil from "../aktifitas/penulis/Profil";
+import AlphaPenulisArtikelBuat from "../aktifitas/penulis/artikel/AlphaPenulisArtikelBuat";
+import AlphaPenulisArtikelSemua from "../aktifitas/penulis/artikel/AlphaPenulisArtikelSemua";
+import AlphaTamuArtikelSatu from "../aktifitas/tamu/artikel/AlphaTamuArtikelSatu";
+import AlphaHtml from "../AlphaHtml";
+import AlphaTamuMenuArtikelSemua from "../aktifitas/tamu/artikel/AlphaTamuMenuArtikelSemua";
 class AlphaRute extends Component {
   render() {
     return (
-      <BrowserRouter
+      <Router
+        history={AppHistory}
       >
-        <Switch>
+        <AlphaWadah>
           <Route exact path="/" render={() => (
             <Redirect to="/tamu/artikel/semua/1"/>
           )}/>
-          {/*<Route exact path="/penulis/profil" component={PenulisManusiaSaya}/>*/}
           {/*tamu*/}
           <Route exact path="/tamu/artikel/semua/:hal" component={AlphaTamuArtikelSemua}/>
-          {/*<Route exact path="/tamu/artikel/satu/:slug" component={TamuArtikel}/>*/}
-          {/*<Route exact path="/tamu/masuk" component={TamuMasuk}/>*/}
-          {/*<Route exact path="/tamu/menu/:slug/:page" component={TamuMenuIndex}/>*/}
+          <Route exact path="/tamu/artikel/satu/:slug" component={AlphaTamuArtikelSatu}/>
+          <Route exact path="/tamu/masuk" component={AlphaTamuMasuk}/>
+          <Route exact path="/tamu/menu/:slug/:page" component={AlphaTamuMenuArtikelSemua}/>
           {/*penulis*/}
-          {/*<Route exact path="/penulis/artikel/semua/:hal" component={PenulisArtikel}/>*/}
-          {/*<Route exact path="/penulis/artikel/buat" component={PenulisArtikelBuat}/>*/}
+          <Route exact path="/penulis/profil" component={AlphaPenulisProfil}/>
+          <Route exact path="/penulis/artikel/semua/:hal" component={AlphaPenulisArtikelSemua}/>
+          <Route exact path="/penulis/artikel/buat" component={AlphaPenulisArtikelBuat}/>
           {/*<Route exact path="/penulis/artikel/saya/ubah/:slug" component={PenulisArtikelSayaUbah}/>*/}
           {/*pengurus*/}
           {/*<Route exact path="/pengurus/menu" component={PengurusMenu}/>*/}
@@ -29,8 +38,8 @@ class AlphaRute extends Component {
           {/*<Route exact path="/pengurus/variabel/buat" component={PengurusVariabelBuat}/>*/}
           {/*<Route exact path="/pengurus/manusia" component={PengurusManusia}/>*/}
           {/*<Route exact path="/pengurus/manusia/buat" component={PengurusManusiaBuat}/>*/}
-        </Switch>
-      </BrowserRouter>
+        </AlphaWadah>
+      </Router>
     );
   }
 }

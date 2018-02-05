@@ -1,32 +1,39 @@
 import React,{Component} from "react"
-import {Observer} from "mobx-react/custom.module";
-import AlphaUtama from "../../../tampilan/AlphaUtama";
-import AlphaArtikelKecil from "../../../tampilan/AlphaArtikelKecil";
 import mobxStore from "../../../../../../mobx/mobxStore";
+import AlphaKotak from "../../../tampilan/AlphaKotak";
+import AlphaUtama from "../../../tampilan/AlphaUtama";
+import {Observer} from "mobx-react/custom.module"
+import {Link} from "react-router-dom";
+import AlphaTombolSpesial from "../../../tampilan/AlphaTombolSpesial";
 import ApiHelper from "../../../../../../helper/ApiHelper";
-import AlphaPaginasi from "../../../tampilan/AlphaPaginasi";
-import BantuanTanggal from "../../../../../../bantuan/BantuanTanggal";
 import BantuanWaktu from "../../../../../../bantuan/BantuanWaktu";
-export default class AlphaTamuArtikelSemua extends Component {
-  ambilData(hal){
-    ApiHelper.getTamuArtikelSemuaPaginasi(hal);
+import AlphaArtikelKecil from "../../../tampilan/AlphaArtikelKecil";
+import AlphaPaginasi from "../../../tampilan/AlphaPaginasi";
+class AlphaPenulisArtikelSemua extends Component {
+  static loadData(hal){
+    ApiHelper.penulisArtikelSayaSemuaPaginasi(3,hal)
   }
   componentWillMount(){
-    this.ambilData(this.props.match.params.hal);
+    AlphaPenulisArtikelSemua.loadData(this.props.match.params.hal)
   }
   componentWillReceiveProps(nextProps){
-    if(this.props.match.params.hal!==nextProps.match.params.hal)
-      this.ambilData(nextProps.match.params.hal);
+    if(
+      this.props.match.params.hal===nextProps.match.params.hal
+    ){
+
+    }else{
+      AlphaPenulisArtikelSemua.loadData(nextProps.match.params.hal);
+    }
   }
   render() {
     return (
       <Observer>
         {()=>{
-          const jumlah=mobxStore.tamuArtikelPaginasi.total;
-          const hal=this.props.match.params.hal;
-          const halTerakhir=parseInt(mobxStore.tamuArtikelPaginasi.last_page);
+          const jumlah=mobxStore.penulisArtikelSayaSemuaPaginasi.total;
+          const hal=parseInt(this.props.match.params.hal);
+          const halTerakhir=parseInt(mobxStore.penulisArtikelSayaSemuaPaginasi.last_page);
           const url='/penulis/artikel/semua/';
-          const artikelLis=mobxStore.tamuArtikelPaginasi.data.map((item,index)=>{
+          const artikelLis=mobxStore.penulisArtikelSayaSemuaPaginasi.data.map((item,index)=>{
             const judul=item.judul;
             const url='/tamu/artikel/satu/'+item.slug;
             const waktu=BantuanWaktu.waktuYangLalu(item.waktu);
@@ -53,6 +60,16 @@ export default class AlphaTamuArtikelSemua extends Component {
           });
           return(
             <AlphaUtama>
+              <AlphaKotak>
+                <h3>Artikel</h3>
+                <Link
+                  to={'/penulis/artikel/buat'}
+                >
+                  <AlphaTombolSpesial>
+                    Buat Artikel
+                  </AlphaTombolSpesial>
+                </Link>
+              </AlphaKotak>
               {artikelLis}
               <AlphaPaginasi
                 url={url}
@@ -66,4 +83,5 @@ export default class AlphaTamuArtikelSemua extends Component {
       </Observer>
     )
   }
-};
+}
+export default AlphaPenulisArtikelSemua

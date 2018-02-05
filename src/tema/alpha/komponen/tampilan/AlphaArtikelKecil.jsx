@@ -1,9 +1,24 @@
 import React from 'react'
+import AlphaTindakanHorizontal from "./AlphaTindakanHorizontal";
+import AlphaLis from "./AlphaLis";
+import {Link} from "react-router-dom";
 class AlphaArtikelKecil extends React.Component{
   render(){
+    const url=this.props.url;
     const judul=this.props.judul;
     const waktu=this.props.waktu;
-    const konten=this.props.konten;
+    let split=this.props.konten;
+    split=split.split('<br />');
+    const konten=split.map((item,indeks)=>{
+      return(
+        <p
+          key={indeks}
+          style={{textAlign:'justify'}}
+        >
+          {item}
+        </p>
+      )
+    });
     const dilihat=this.props.dilihat;
     const disukai=this.props.disukai;
     const gambarUrl=this.props.gambarUrl;
@@ -15,13 +30,17 @@ class AlphaArtikelKecil extends React.Component{
           <div className="12u">
             <div className="row">
               <div className="6u">
-                <h3
-                  style={{}}
+                <Link
+                  to={url}
                 >
-                  <b>
-                    {judul}
-                  </b>
-                </h3>
+                  <h3
+                    style={{}}
+                  >
+                    <b>
+                      {judul}
+                    </b>
+                  </h3>
+                </Link>
               </div>
               <div className="6u">
                 <div
@@ -66,11 +85,7 @@ class AlphaArtikelKecil extends React.Component{
           <div
             className="12u"
           >
-            <p
-              style={{textAlign:'justify'}}
-            >
-              {konten}
-            </p>
+            {konten}
           </div>
         </div>
         <div className="row">
@@ -80,26 +95,28 @@ class AlphaArtikelKecil extends React.Component{
           <div
             className="12u"
           >
-            <ul
-              style={{
+            <AlphaTindakanHorizontal
+              gaya={{
                 textAlign:'end'
               }}
-              className="icons">
-              <li>
-                <a
+            >
+              <AlphaLis>
+                <p
                   className="icon fa-check-circle">
-                  <h5><b>{disukai}</b></h5>
-                </a>
-              </li>
-              <li
-                style={{verticalAlign:'top'}}
-              >
-                <a
+                </p>
+              </AlphaLis>
+              <AlphaLis>
+                <p><b>{disukai}</b></p>
+              </AlphaLis>
+              <AlphaLis>
+                <p
                   className="icon fa-eye">
-                  <h5><b>{dilihat}</b></h5>
-                </a>
-              </li>
-            </ul>
+                </p>
+              </AlphaLis>
+              <AlphaLis>
+                <p><b>{dilihat}</b></p>
+              </AlphaLis>
+            </AlphaTindakanHorizontal>
           </div>
         </div>
       </section>

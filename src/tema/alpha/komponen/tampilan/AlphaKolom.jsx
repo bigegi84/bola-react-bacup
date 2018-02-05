@@ -1,10 +1,10 @@
 import React from 'react'
 class AlphaKolom extends React.Component{
   render(){
-    const kelas=this.props.kelas;
+    const lebar=this.props.lebar;
     return(
       <div
-        className={kelas}
+        className={lebar+'u'}
       >
         {this.props.children}
       </div>

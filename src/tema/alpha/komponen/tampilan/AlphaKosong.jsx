@@ -1,6 +1,6 @@
 import React from 'react'
 import AlphaKolom from "./AlphaKolom";
-class AlphaUtama extends React.Component{
+class AlphaKosong extends React.Component{
   render(){
     return(
       <AlphaKolom
@@ -11,4 +11,4 @@ class AlphaUtama extends React.Component{
     )
   }
 }
-export default AlphaUtama
+export default AlphaKosong

@@ -10,21 +10,22 @@ class ApiHelper{
       headers: {
         'Accept': 'application/json',
       },
-      data: JSON.stringify(mobxStore.tamuMasuk)
+      data:JSON.stringify(mobxStore.tamuMasuk)
     })
       .then((response)=>{
         let r=response.data;
-        if(r.success){
+        if(r.sukses){
           localStorage.setItem('nilai', mobxStore.tamuMasuk.nilai);
           localStorage.setItem('sandi', mobxStore.tamuMasuk.sandi);
           localStorage.setItem('token', r.data.token);
+          BantuanDasar.dasarKeberhasilan(r.pesan);
           callback()
         }else{
-          alert(JSON.stringify(r))
+          BantuanDasar.dasarKeberhasilan(r.pesan);
         }
       })
       .catch((error)=>{
-        console.log(error);
+        BantuanDasar.dasarKegagalan(error);
       });
   }
   static getTamuArtikelSemuaPaginasi(page,per_hal=10){
@@ -105,11 +106,11 @@ class ApiHelper{
           mobxStore.penulisManusiaSaya=r.data;
           callback()
         }else{
-          alert(JSON.stringify(r))
+          BantuanDasar.dasarKegagalan(r.pesan);
         }
       })
       .catch((error)=>{
-        console.log(error);
+        BantuanDasar.dasarKegagalan(error);
       });
   }
   static penulisManusiaSayaTambal(callback){
@@ -124,7 +125,7 @@ class ApiHelper{
       .then((response)=>{
         let r=response.data;
         if(r.sukses){
-          this.penulisManusiaSaya();
+          BantuanDasar.dasarKeberhasilan(r.pesan);
           callback(r.pesan)
         }else{
           BantuanDasar.dasarKegagalan(JSON.stringify(r))
@@ -217,6 +218,7 @@ class ApiHelper{
           mobxStore.penulisArtikelBuat.deskripsi='';
           mobxStore.penulisArtikelBuat.id_menu=0;
           mobxStore.penulisArtikelBuat.gambar='';
+          BantuanDasar.dasarKeberhasilan(r.message);
           callback();
         }else{
           alert(JSON.stringify(r))

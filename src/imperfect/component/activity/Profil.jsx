@@ -65,6 +65,7 @@ export default class Profil extends Component {
                       if(mobxStore.penulisManusiaSayaTambal.nilai!==''){
                         ApiHelper.penulisManusiaSayaTambal((pesan)=>{
                           mobxStore.croppie='';
+                          ApiHelper.penulisManusiaSaya(()=>{});
                           alertify.success(pesan);
                         })
                       }else{
