@@ -9,6 +9,7 @@ class AlphaArtikelSatu extends React.Component{
     const judul=this.props.judul;
     const waktu=this.props.waktu;
     let deskripsi=this.props.deskripsi;
+    const menu=this.props.menu;
     let konten=this.props.konten;
     if(konten!==null&&typeof konten!=='undefined'){
       let split=this.props.konten;
@@ -106,7 +107,7 @@ class AlphaArtikelSatu extends React.Component{
             <AlphaTindakanHorizontal
             >
               <AlphaLis>
-                Indonesia
+                {menu}
               </AlphaLis>
             </AlphaTindakanHorizontal>
           </AlphaKolom>

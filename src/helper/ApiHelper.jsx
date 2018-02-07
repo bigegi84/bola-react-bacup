@@ -463,7 +463,7 @@ class ApiHelper{
         console.log(error);
       });
   }
-  static getTamuMenuArtikelPaginasi(slug,page){
+  static getTamuMenuArtikelPaginasi(slug,page,per_hal=10){
     axios(
       {
         url: Url+'tamu/menu/artikel/paginasi',
@@ -471,7 +471,7 @@ class ApiHelper{
         params:{
           page:page,
           slug:slug,
-          per_hal:10
+          per_hal:per_hal
         }
       })
       .then((response)=>{

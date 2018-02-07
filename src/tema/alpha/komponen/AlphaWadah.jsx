@@ -35,10 +35,6 @@ class AlphaWadah extends React.Component{
           <AlphaNavigasi/>
         </header>
         <section id="main" className="container">
-          <header>
-            <h2>Elements</h2>
-            <p>Just an assorted selection of elements.</p>
-          </header>
           <div className="row">
             <BarSisi/>
             {this.props.children}

@@ -21,6 +21,7 @@ class AlphaTamuArtikelSatu extends Component {
           const waktu=BantuanWaktu.waktuYangLalu(data.waktu);
           const deskripsi=data.deskripsi;
           const konten=data.konten;
+          const menu=data.menu.nama;
           const dilihat=data.dilihat;
           const disukai=data.disukai;
           const gambarUrl=data.gambar.url;
@@ -30,6 +31,7 @@ class AlphaTamuArtikelSatu extends Component {
             <AlphaUtama>
               <AlphaArtikelSatu
                 judul={judul}
+                menu={menu}
                 deskripsi={deskripsi}
                 waktu={waktu}
                 konten={konten}

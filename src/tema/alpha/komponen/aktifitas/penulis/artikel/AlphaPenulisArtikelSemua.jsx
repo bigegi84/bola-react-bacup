@@ -34,10 +34,12 @@ class AlphaPenulisArtikelSemua extends Component {
           const halTerakhir=parseInt(mobxStore.penulisArtikelSayaSemuaPaginasi.last_page);
           const url='/penulis/artikel/semua/';
           const artikelLis=mobxStore.penulisArtikelSayaSemuaPaginasi.data.map((item,index)=>{
+            const primer=item.id;
             const judul=item.judul;
             const url='/tamu/artikel/satu/'+item.slug;
             const waktu=BantuanWaktu.waktuYangLalu(item.waktu);
             const konten=item.konten;
+            const deskripsi=item.deskripsi;
             const dilihat=item.dilihat;
             const disukai=item.disukai;
             const gambarUrl=item.gambar.url;
@@ -46,8 +48,16 @@ class AlphaPenulisArtikelSemua extends Component {
             return(
               <AlphaArtikelKecil
                 key={index}
+                primer={primer}
+                klikHapus={(nilai)=>{
+                  ApiHelper.penulisArtikelHapus(nilai,()=>{
+                    this.loadData()
+                  })
+                }}
+                aksi={true}
                 url={url}
                 judul={judul}
+                deskripsi={deskripsi}
                 waktu={waktu}
                 konten={konten}
                 dilihat={dilihat}

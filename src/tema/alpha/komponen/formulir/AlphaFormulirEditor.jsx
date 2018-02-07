@@ -18,9 +18,17 @@ class AlphaFormulirEditor extends Component {
             toolbar: false,
             force_p_newlines : false,
             force_br_newlines : true,
-            convert_newlines_to_brs : false,
+            convert_newlines_to_brs : true,
             remove_linebreaks : true,
             forced_root_block : '',
+            plugins : "paste",
+            paste_use_dialog : false,
+            paste_auto_cleanup_on_paste : true,
+            paste_convert_headers_to_strong : false,
+            paste_strip_class_attributes : "all",
+            paste_remove_spans : true,
+            paste_remove_styles : true,
+            paste_retain_style_properties : "",
           }}
           onChange={(e)=>{
             perubahan(e.target.getContent())

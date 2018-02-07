@@ -9,7 +9,7 @@ import BantuanTanggal from "../../../../../../bantuan/BantuanTanggal";
 import BantuanWaktu from "../../../../../../bantuan/BantuanWaktu";
 export default class AlphaTamuArtikelSemua extends Component {
   ambilData(hal){
-    ApiHelper.getTamuArtikelSemuaPaginasi(hal);
+    ApiHelper.getTamuArtikelSemuaPaginasi(hal,3);
   }
   componentWillMount(){
     this.ambilData(this.props.match.params.hal);
@@ -30,7 +30,7 @@ export default class AlphaTamuArtikelSemua extends Component {
             const judul=item.judul;
             const url='/tamu/artikel/satu/'+item.slug;
             const waktu=BantuanWaktu.waktuYangLalu(item.waktu);
-            const konten=item.konten;
+            const deskripsi=item.deskripsi;
             const dilihat=item.dilihat;
             const disukai=item.disukai;
             const gambarUrl=item.gambar.url;
@@ -42,7 +42,7 @@ export default class AlphaTamuArtikelSemua extends Component {
                 url={url}
                 judul={judul}
                 waktu={waktu}
-                konten={konten}
+                deskripsi={deskripsi}
                 dilihat={dilihat}
                 disukai={disukai}
                 gambarUrl={gambarUrl}

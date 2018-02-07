@@ -2,23 +2,15 @@ import React from 'react'
 import AlphaTindakanHorizontal from "./AlphaTindakanHorizontal";
 import AlphaLis from "./AlphaLis";
 import {Link} from "react-router-dom";
+import AlphaBarisKolom from "./AlphaBarisKolom";
 class AlphaArtikelKecil extends React.Component{
   render(){
+    const aksi=this.props.aksi;
     const url=this.props.url;
+    const primer=this.props.primer;
     const judul=this.props.judul;
+    const deskripsi=this.props.deskripsi;
     const waktu=this.props.waktu;
-    let split=this.props.konten;
-    split=split.split('<br />');
-    const konten=split.map((item,indeks)=>{
-      return(
-        <p
-          key={indeks}
-          style={{textAlign:'justify'}}
-        >
-          {item}
-        </p>
-      )
-    });
     const dilihat=this.props.dilihat;
     const disukai=this.props.disukai;
     const gambarUrl=this.props.gambarUrl;
@@ -82,14 +74,15 @@ class AlphaArtikelKecil extends React.Component{
               />
             </span>
           </div>
-          <div
-            className="12u"
-          >
-            {konten}
-          </div>
         </div>
         <div className="row">
-
+          <AlphaBarisKolom
+            lebar="12"
+          >
+            <blockquote>
+              {deskripsi}
+            </blockquote>
+          </AlphaBarisKolom>
         </div>
         <div className="row">
           <div
@@ -116,6 +109,17 @@ class AlphaArtikelKecil extends React.Component{
               <AlphaLis>
                 <p><b>{dilihat}</b></p>
               </AlphaLis>
+              {aksi?(
+                <AlphaLis>
+                  <p
+                    onClick={()=>{
+                      this.props.klikHapus(primer)
+                    }}
+                  ><b>Hapus</b></p>
+                </AlphaLis>
+              ):(
+                <AlphaLis/>
+              )}
             </AlphaTindakanHorizontal>
           </div>
         </div>

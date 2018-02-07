@@ -9,7 +9,7 @@ import BantuanTanggal from "../../../../../../bantuan/BantuanTanggal";
 import BantuanWaktu from "../../../../../../bantuan/BantuanWaktu";
 export default class AlphaTamuMenuArtikelSemua extends Component {
   ambilData(slug,hal){
-    ApiHelper.getTamuMenuArtikelPaginasi(slug,hal);
+    ApiHelper.getTamuMenuArtikelPaginasi(slug,hal,3);
   }
   componentWillMount(){
     this.ambilData(this.props.match.params.slug,this.props.match.params.page);
@@ -28,16 +28,18 @@ export default class AlphaTamuMenuArtikelSemua extends Component {
     return (
       <Observer>
         {()=>{
+          const slug=this.props.match.params.slug;
           const respon=mobxStore.tamuMenuArtikelPaginasi;
           const jumlah=respon.total;
           const hal=this.props.match.params.page;
           const halTerakhir=parseInt(respon.last_page);
-          const url='/tamu/menu/indonesia/';
+          const url='/tamu/menu/'+slug+'/';
           const artikelLis=respon.data.map((item,index)=>{
             const judul=item.judul;
             const url='/tamu/artikel/satu/'+item.slug;
             const waktu=BantuanWaktu.waktuYangLalu(item.waktu);
             const konten=item.konten;
+            const deskripsi=item.deskripsi;
             const dilihat=item.dilihat;
             const disukai=item.disukai;
             const gambarUrl=item.gambar.url;
@@ -49,7 +51,7 @@ export default class AlphaTamuMenuArtikelSemua extends Component {
                 url={url}
                 judul={judul}
                 waktu={waktu}
-                konten={konten}
+                deskripsi={deskripsi}
                 dilihat={dilihat}
                 disukai={disukai}
                 gambarUrl={gambarUrl}

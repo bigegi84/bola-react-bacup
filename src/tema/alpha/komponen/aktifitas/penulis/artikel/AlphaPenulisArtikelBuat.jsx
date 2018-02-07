@@ -10,13 +10,19 @@ import AppHistory from "../../../../../../imperfect/component/AppHistory";
 import AlphaFormulirArtikel from "../../../formulir/AlphaFormulirArtikel";
 class AlphaPenulisArtikelBuat extends Component {
   componentWillMount(){
-    mobxStore.tamuMasuk.nilai=localStorage.getItem("nilai");
-    mobxStore.tamuMasuk.sandi=localStorage.getItem("sandi")
+    mobxStore.penulisArtikelBuat.id_menu=1
   }
   render() {
     return (
       <Observer>
         {()=>{
+          let menu=mobxStore.menu;
+          menu=menu.map((item)=>{
+            return{
+              nama:item.nama,
+              nilai:item.id
+            }
+          })
           return(
             <AlphaUtama>
               <AlphaKotak>
@@ -25,6 +31,7 @@ class AlphaPenulisArtikelBuat extends Component {
                   nilaiJudul={mobxStore.penulisArtikelBuat.judul}
                   nilaiDeskripsi={mobxStore.penulisArtikelBuat.deskripsi}
                   nilaiKonten={mobxStore.penulisArtikelBuat.konten}
+                  nilaiMenu={menu}
                   nilaiGambar={mobxStore.penulisArtikelBuat.gambar}
                   perubahanJudul={(nilai)=>{
                     mobxStore.penulisArtikelBuat.judul=nilai
@@ -34,6 +41,9 @@ class AlphaPenulisArtikelBuat extends Component {
                   }}
                   perubahanKonten={(nilai)=>{
                     mobxStore.penulisArtikelBuat.konten=nilai
+                  }}
+                  perubahanMenu={(nilai)=>{
+                    mobxStore.penulisArtikelBuat.id_menu=nilai
                   }}
                   perubahanGambar={(nilai)=>{
                     mobxStore.penulisArtikelBuat.gambar=nilai
