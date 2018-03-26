@@ -26,6 +26,7 @@
     "react-bootstrap": "^0.31.5",
     "react-bootstrap-typeahead": "^2.0.2",
     "react-croppie": "^1.0.0",
+    "react-document-meta": "^2.1.2",
     "react-dom": "^16.2.0",
     "react-file-base64": "^1.0.3",
     "react-image-crop": "^3.0.9",

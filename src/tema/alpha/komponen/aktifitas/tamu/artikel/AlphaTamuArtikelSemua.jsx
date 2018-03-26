@@ -25,7 +25,7 @@ export default class AlphaTamuArtikelSemua extends Component {
           const jumlah=mobxStore.tamuArtikelPaginasi.total;
           const hal=this.props.match.params.hal;
           const halTerakhir=parseInt(mobxStore.tamuArtikelPaginasi.last_page);
-          const url='/penulis/artikel/semua/';
+          const url='/tamu/artikel/semua/';
           const artikelLis=mobxStore.tamuArtikelPaginasi.data.map((item,index)=>{
             const judul=item.judul;
             const url='/tamu/artikel/satu/'+item.slug;

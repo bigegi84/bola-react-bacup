@@ -8,10 +8,12 @@ import AlphaRute from "./rute/AlphaRute";
 import AlphaWadah from "./AlphaWadah";
 class AlphaHtml extends React.Component{
   state={
-    jqueryDimuat:false
+    jqueryDimuat:false,
+    skelDimuat:false
   }
   render(){
     const jqueryDimuat=this.state.jqueryDimuat;
+    const skelDimuat=this.state.skelDimuat;
     return(
       <html>
       <head>
@@ -50,13 +52,18 @@ class AlphaHtml extends React.Component{
             {/*<Script url="/tema/html5up-alpha/assets/js/jquery.dropotron.min.js"/>*/}
             <Script url="/tema/html5up-alpha/assets/js/jquery.scrollgress.min.js">
             </Script>
-            <Script url="/tema/html5up-alpha/assets/js/skel.min.js"/>
-            <Script url="/js/skel-layout.min.js"/>
+            <Script
+              url="/tema/html5up-alpha/assets/js/skel.min.js"
+              onLoad={()=>{
+                this.setState({skelDimuat:true})
+              }}
+            />
+            {skelDimuat?(
+              <Script url="/js/skel-layout.min.js"/>
+            ):(<div/>)}
             <Script url="/js/alertify.js"/>
             <Script
               url="/tema/html5up-alpha/assets/js/util.js"
-              onLoad={()=>{
-              }}
             >
             </Script>
             {/*<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->*/}
